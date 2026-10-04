@@ -1,6 +1,6 @@
 /**
- * FlowCraft — Interactive Website Logic
- * Business Process Automation & AI Integration
+ * Kinetiq — Interactive Website Logic
+ * Business Process Automation & AI Integration (Kinetic Energy + Precision)
  * Includes Google Calendar API Mock Integration & Executive Hub Helpers
  */
 
@@ -10,14 +10,14 @@ const GCAL_CONFIG = {
   whatsappNumber: '+970595457008',
   whatsappCleanNumber: '970595457008',
   whatsappBaseUrl: 'https://wa.me/970595457008',
-  hostName: 'Amjad Khaliliah — FlowCraft Solutions Architecture',
-  apiKey: 'AIzaSyMockFlowCraftKey2026_Enterprise', // Replace with your real Google Cloud / Calendar API Key if integrating client-side OAuth
+  hostName: 'Amjad Khaliliah — Kinetiq Solutions Architecture',
+  apiKey: 'AIzaSyMockKinetiqKey2026_Enterprise', // Replace with your real Google Cloud / Calendar API Key if integrating client-side OAuth
   calendarId: 'AmjadKhaliliah1998@gmail.com',
   defaultMeetLink: 'https://meet.google.com/flw-exec-briefing',
   
   // OPTIONAL: Paste your n8n Production Webhook URL or Formspree/Make.com endpoint here
   // to receive instant notifications in Telegram / Discord / CRM whenever any form is submitted:
-  n8nWebhookUrl: '', // e.g. 'https://n8n.yourdomain.com/webhook/flowcraft-lead'
+  n8nWebhookUrl: '', // e.g. 'https://n8n.yourdomain.com/webhook/kinetiq-lead'
 };
 
 // Selected Booking State
@@ -531,8 +531,8 @@ function handleExecutiveBooking(event) {
     // Generate Google Calendar Link
     if (gcalDirectLink) {
       const gcalUrl = generateGoogleCalendarUrl(
-        `FlowCraft Executive Strategy Briefing: ${bookingState.clientCompany}`,
-        `Strategic Business Process Automation Briefing with FlowCraft Architecture Team for ${bookingState.clientName} (${bookingState.clientEmail}).\nGoogle Meet: ${GCAL_CONFIG.defaultMeetLink}`,
+        `Kinetiq Executive Strategy Briefing: ${bookingState.clientCompany}`,
+        `Strategic Business Process Automation Briefing with Kinetiq Architecture Team for ${bookingState.clientName} (${bookingState.clientEmail}).\nGoogle Meet: ${GCAL_CONFIG.defaultMeetLink}`,
         'Google Meet Video Call',
         bookingState.selectedDate || new Date()
       );
@@ -988,7 +988,7 @@ function resetLivePayrollDemo() {
   const termBody = document.getElementById('demo-terminal-body');
   if (termBody) {
     termBody.innerHTML = `
-      <div class="term-line info"><span class="term-time">[${getCurrentTimeStr()}]</span> FlowCraft Automation Engine v5.4 reset.</div>
+      <div class="term-line info"><span class="term-time">[${getCurrentTimeStr()}]</span> Kinetiq Automation Engine v5.4 reset.</div>
       <div class="term-line success"><span class="term-time">[${getCurrentTimeStr()}]</span> Connected to BambooHR API & Bank Gateway.</div>
       <div class="term-line"><span class="term-time">[${getCurrentTimeStr()}]</span> Click "▶ Run Live Simulation" above to execute salary calculations...</div>
     `;
@@ -1033,15 +1033,15 @@ function switchDemoPreset(presetKey) {
   const engineName = document.getElementById('demo-engine-name');
 
   if (presetKey === 'payroll') {
-    if (engineName) engineName.textContent = 'FLOWCRAFT_PAYROLL_CORE_v5.4.0 (ACTIVE)';
+    if (engineName) engineName.textContent = 'KINETIQ_PAYROLL_CORE_v5.4.0 (ACTIVE)';
     resetLivePayrollDemo();
   } else if (presetKey === 'invoice') {
-    if (engineName) engineName.textContent = 'FLOWCRAFT_DOC_AI_OCR_v3.2.0 (ACTIVE)';
+    if (engineName) engineName.textContent = 'KINETIQ_DOC_AI_OCR_v3.2.0 (ACTIVE)';
     resetLivePayrollDemo();
     appendTerminalLog('info', 'Loaded Preset: Intelligent Invoice & Document OCR Pipeline.');
     appendTerminalLog('success', 'Connected to AWS Textract & QuickBooks Online API.');
   } else if (presetKey === 'crm') {
-    if (engineName) engineName.textContent = 'FLOWCRAFT_SPEED_TO_LEAD_v4.1.0 (ACTIVE)';
+    if (engineName) engineName.textContent = 'KINETIQ_SPEED_TO_LEAD_v4.1.0 (ACTIVE)';
     resetLivePayrollDemo();
     appendTerminalLog('info', 'Loaded Preset: Omnichannel Speed-to-Lead Routing Engine.');
     appendTerminalLog('success', 'Connected to Meta Ads Webhook & HubSpot CRM API.');

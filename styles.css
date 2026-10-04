@@ -1,6 +1,7 @@
 /* ==========================================================================
-   FlowCraft — Design System & Stylesheet
+   Kinetiq — Design System & Stylesheet
    Theme: High-end B2B Automation Consultancy (Dark Mode / Glassmorphism)
+   Brand Colors: Baby Blue (#38BDF8) & Kinetic Orange (#FF6B00)
    Includes Executive Leadership Hub & Google Calendar Booking Engine
    ========================================================================== */
 
@@ -8,21 +9,28 @@
    1. CSS Custom Properties / Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Brand Color Palette */
-  --bg-dark: #080C14;
-  --bg-darker: #05080E;
-  --bg-card: rgba(17, 28, 51, 0.7);
-  --bg-card-hover: rgba(22, 35, 63, 0.85);
-  --bg-card-solid: #111C33;
-  --bg-input: #0D1629;
+  /* Brand Color Palette: Deep Slate Base */
+  --bg-dark: #070B12;
+  --bg-darker: #04070D;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --bg-card-hover: rgba(20, 32, 58, 0.9);
+  --bg-card-solid: #0F172A;
+  --bg-input: #0B1324;
   
-  /* Accents & Brand Gradients */
-  --cyan-primary: #00E5FF;
-  --cyan-glow: rgba(0, 229, 255, 0.35);
-  --indigo-primary: #6366F1;
-  --indigo-glow: rgba(99, 102, 241, 0.35);
+  /* Accents & Brand Gradients: Baby Blue & Kinetic Orange */
+  --cyan-primary: #38BDF8;           /* Kinetiq Baby Blue */
+  --cyan-glow: rgba(56, 189, 248, 0.4);
+  --blue-baby: #38BDF8;
+  --blue-electric: #0284C7;
+  
+  --orange-primary: #FF6B00;         /* Kinetiq Kinetic Orange */
+  --orange-bright: #FF8A00;
+  --orange-glow: rgba(255, 107, 0, 0.4);
+  --indigo-primary: #FF6B00;         /* Primary Kinetic Accent */
+  --indigo-glow: rgba(255, 107, 0, 0.35);
+  
   --purple-neon: #8B5CF6;
-  --purple-glow: rgba(139, 92, 246, 0.35);
+  --purple-glow: rgba(139, 92, 246, 0.3);
   --emerald-success: #10B981;
   --emerald-glow: rgba(16, 185, 129, 0.3);
   --amber-warning: #F59E0B;
@@ -31,21 +39,21 @@
   /* Executive Accents */
   --gold-ceo: #FBBF24;
   --cyan-cto: #38BDF8;
-  --pink-cmo: #F472B6;
+  --pink-cmo: #FF7A18;
 
   /* Typography Colors */
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
   --text-dim: #64748B;
-  --text-inverse: #080C14;
+  --text-inverse: #070B12;
 
   /* Border & Glass Styles */
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-highlight: rgba(0, 229, 255, 0.3);
+  --border-highlight: rgba(56, 189, 248, 0.35);
   --border-card: rgba(255, 255, 255, 0.1);
   --glass-blur: blur(16px);
   --glass-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-  --glow-shadow: 0 0 35px -5px rgba(0, 229, 255, 0.25);
+  --glow-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.25);
 
   /* Fonts */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -213,7 +221,13 @@ button {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #00E5FF 0%, #6366F1 50%, #A855F7 100%);
+  background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 35%, #FF7A18 75%, #FF5500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-orange {
+  background: linear-gradient(135deg, #FF8A00 0%, #FF5500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -225,6 +239,7 @@ button {
 }
 
 .text-cyan { color: var(--cyan-primary); }
+.text-orange { color: var(--orange-primary); }
 .text-emerald { color: var(--emerald-success); }
 .w-full { width: 100%; }
 .mt-3 { margin-top: 16px; }
@@ -250,16 +265,16 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00E5FF 0%, #4F46E5 100%);
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8A00 50%, #38BDF8 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 229, 255, 0.5);
-  background: linear-gradient(135deg, #22EDFF 0%, #6366F1 100%);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.35);
+  background: linear-gradient(135deg, #FF7A18 0%, #FFA033 50%, #0EA5E9 100%);
 }
 
 .btn-secondary {
@@ -388,33 +403,30 @@ button {
 }
 
 .logo-icon {
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(99, 102, 241, 0.15));
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.15), rgba(56, 189, 248, 0.15));
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+  padding: 4px;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.25), 0 0 15px rgba(56, 189, 248, 0.2);
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
-.logo-node { transition: all 0.3s ease; }
-.node-1 { fill: var(--cyan-primary); }
-.node-2 { fill: var(--indigo-primary); }
-.node-3 { fill: var(--purple-neon); }
-
-.logo-wire {
-  stroke: var(--cyan-primary);
-  stroke-dasharray: 40;
-  animation: logo-wire-draw 3s infinite alternate;
+.logo-link:hover .logo-icon {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 25px rgba(255, 107, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.35);
+  border-color: var(--orange-primary);
 }
 
-@keyframes logo-wire-draw {
-  0% { stroke-dashoffset: 40; }
-  100% { stroke-dashoffset: 0; }
+.kinetiq-logo-mark {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .logo-text {
@@ -424,19 +436,23 @@ button {
 }
 
 .brand-title {
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 900;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 2px;
 }
 
+.brand-title span.brand-dot {
+  color: var(--orange-primary);
+}
+
 .brand-tagline {
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--cyan-primary);
 }

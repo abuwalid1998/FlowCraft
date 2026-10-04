@@ -1,5 +1,6 @@
-# FlowCraft — Business Process Automation & AI Integration
+# Kinetiq — Business Process Automation & AI Integration
 
+> **Kinetic Energy + Precision.**  
 > **Automate the work behind your business.**  
 > Custom n8n workflows, enterprise system integrations, document intelligence, and AI agents built for modern businesses and C-Suite leadership.
 
@@ -11,10 +12,11 @@
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Tech Stack & Brand Identity
+- **Brand Identity:** Kinetiq (Kinetic Energy + Precision) with Baby Blue (`#38BDF8`) & Kinetic Orange (`#FF6B00`) Palette.
 - **Vanilla Modern Frontend:** HTML5 (Semantic & SEO Optimized), Modern CSS (Variables, Glassmorphism, CSS Grid, Responsive Breakpoints), Pure Vanilla JavaScript (Zero bloated frameworks).
 - **Interactive Modules:**
-  - Live SVG Node-packet workflow simulator
+  - Full Live Payroll Execution & WhatsApp Notification Simulation Canvas
   - 7-Stage Document Intelligence Pipeline
   - Interactive ROI & Operational Savings Calculator
   - Multi-category Integration Search & Filter
@@ -33,4 +35,4 @@
 ---
 
 ## 📄 License
-© 2026 FlowCraft. All rights reserved.
+© 2026 Kinetiq. All rights reserved.
