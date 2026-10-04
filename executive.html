@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Leadership Hub — FlowCraft (CEO, CTO, CMO Strategic Automation)</title>
+  <meta name="description" content="Strategic automation architectures tailored for C-level executives. Discover how FlowCraft delivers margin expansion for CEOs, technical resilience for CTOs, and revenue velocity for CMOs.">
+  <meta name="keywords" content="CEO automation strategy, CTO system integration, CMO marketing automation, executive workflow architecture, B2B enterprise automation">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Executive Leadership Hub — FlowCraft">
+  <meta property="og:description" content="Strategic automation for CEOs, CTOs, and CMOs. Unlock operational leverage, data sovereignty, and revenue acceleration.">
+  <meta property="og:url" content="https://flowcraft.dev/executive.html">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='32' y2='32' gradientUnits='userSpaceOnUse'><stop stop-color='%2300E5FF'/><stop offset='1' stop-color='%236366F1'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%23080C14'/><circle cx='9' cy='16' r='4' fill='%2300E5FF'/><circle cx='23' cy='9' r='4' fill='%236366F1'/><circle cx='23' cy='23' r='4' fill='%238B5CF6'/><path d='M9 16L23 9M9 16L23 23' stroke='url(%23g)' stroke-width='2.5' stroke-linecap='round'/></svg>">
+</head>
+<body class="executive-body">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="glow-mesh glow-top-left" aria-hidden="true"></div>
+  <div class="glow-mesh glow-top-right" aria-hidden="true"></div>
+  <div class="glow-mesh glow-center" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header id="main-header" class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link" aria-label="FlowCraft Home">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="8" cy="16" r="3.5" class="logo-node node-1" />
+            <circle cx="24" cy="9" r="3.5" class="logo-node node-2" />
+            <circle cx="24" cy="23" r="3.5" class="logo-node node-3" />
+            <path d="M8 16L24 9" class="logo-wire wire-1" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M8 16L24 23" class="logo-wire wire-2" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">FlowCraft</span>
+          <span class="brand-tagline">Executive Hub</span>
+        </div>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="nav-menu" aria-label="Executive Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">← Main Overview</a></li>
+          <li><a href="#ceo" class="nav-link exec-nav-link" data-target="ceo">For CEOs</a></li>
+          <li><a href="#cto" class="nav-link exec-nav-link" data-target="cto">For CTOs</a></li>
+          <li><a href="#cmo" class="nav-link exec-nav-link" data-target="cmo">For CMOs</a></li>
+          <li><a href="#executive-briefing" class="nav-link">Executive Briefing</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary" onclick="openConsultationModal('Executive Strategic Briefing')">
+          <span>Schedule Board Briefing</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">← Back to Main Website</a>
+        <a href="#ceo" class="mobile-nav-link" onclick="closeMobileMenu()">For CEOs (Margin & Scale)</a>
+        <a href="#cto" class="mobile-nav-link" onclick="closeMobileMenu()">For CTOs (Architecture & Security)</a>
+        <a href="#cmo" class="mobile-nav-link" onclick="closeMobileMenu()">For CMOs (Revenue Velocity)</a>
+        <a href="#executive-briefing" class="mobile-nav-link" onclick="closeMobileMenu()">Schedule Briefing</a>
+        <div class="mobile-drawer-cta">
+          <button class="btn btn-primary w-full" onclick="closeMobileMenu(); openConsultationModal('Executive Strategic Briefing');">Schedule Board Briefing</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Executive Hero -->
+    <section class="section exec-hero-section">
+      <div class="container text-center">
+        <div class="badge badge-glow">
+          <span class="badge-dot"></span>
+          <span>C-Suite Strategic Playbook</span>
+        </div>
+        <h1 class="hero-title exec-hero-title">
+          Automation Architected for <br>
+          <span class="gradient-text">High-Level Executive Impact</span>
+        </h1>
+        <p class="hero-description mx-auto max-w-750">
+          Executive leadership doesn’t buy software tools; you invest in EBITDA expansion, technical risk mitigation, and commercial velocity. Here is how FlowCraft solves the strategic mandate of your office.
+        </p>
+
+        <!-- Role Quick Switcher Pills -->
+        <div class="role-switcher-container">
+          <a href="#ceo" class="role-pill-btn ceo-pill">
+            <span class="role-icon">👔</span>
+            <div class="role-meta">
+              <strong>Chief Executive Officer</strong>
+              <span>Margin Leverage & Headcount-Free Scale</span>
+            </div>
+          </a>
+          <a href="#cto" class="role-pill-btn cto-pill">
+            <span class="role-icon">💻</span>
+            <div class="role-meta">
+              <strong>Chief Technology Officer</strong>
+              <span>Data Sovereignty & Zero Vendor Lock-in</span>
+            </div>
+          </a>
+          <a href="#cmo" class="role-pill-btn cmo-pill">
+            <span class="role-icon">📈</span>
+            <div class="role-meta">
+              <strong>Chief Marketing Officer</strong>
+              <span>Sub-Minute Lead Routing & Revenue Velocity</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: FOR THE CEO -->
+    <!-- ============================================================ -->
+    <section id="ceo" class="section exec-role-section">
+      <div class="container">
+        <div class="role-header-box ceo-box">
+          <div class="role-badge">Office of the CEO</div>
+          <h2 class="role-title">Scale Business Output <span class="gradient-text">Without Scaling Overhead</span></h2>
+          <p class="role-sub">
+            The traditional dilemma of growth: every 30% increase in revenue historically demanded a 25% increase in administrative headcount. FlowCraft breaks this linear cost curve.
+          </p>
+        </div>
+
+        <div class="exec-metrics-row">
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">+28%</span>
+            <span class="exec-stat-title">EBITDA Margin Leverage</span>
+            <p>Reclaim high-cost labor hours and reallocate senior talent to strategic revenue generation.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">0x</span>
+            <span class="exec-stat-title">Admin Headcount Growth</span>
+            <p>Handle 4x transaction volume across logistics, finance, and support with your existing team.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">100%</span>
+            <span class="exec-stat-title">Process Repeatability</span>
+            <p>De-risk institutional dependency on individual employees with self-executing system logic.</p>
+          </div>
+        </div>
+
+        <div class="exec-pillars-grid">
+          <div class="exec-pillar-card">
+            <div class="exec-icon">📊</div>
+            <h3>Real-Time Operational Clarity</h3>
+            <p>Eliminate delayed monthly reporting. Receive automated executive dashboards on Slack or WhatsApp every morning consolidating cross-departmental cashflow, customer sentiment, and operational throughput.</p>
+          </div>
+          <div class="exec-pillar-card">
+            <div class="exec-icon">🛡️</div>
+            <h3>Business Continuity & De-risking</h3>
+            <p>When critical employees take leave or transition roles, your automated pipelines continue processing client requests, invoice audits, and ERP entries with flawless adherence to standard operating procedures.</p>
+          </div>
+          <div class="exec-pillar-card">
+            <div class="exec-icon">⚡</div>
+            <h3>Rapid Time-to-Value</h3>
+            <p>Unlike multi-year enterprise ERP implementations that cost millions, FlowCraft delivers modular, operational workflow sprints in 2 to 4 weeks with immediate measurable ROI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: FOR THE CTO & VP OF ENGINEERING -->
+    <!-- ============================================================ -->
+    <section id="cto" class="section exec-role-section dark-alt">
+      <div class="container">
+        <div class="role-header-box cto-box">
+          <div class="role-badge cto-badge">Office of the CTO</div>
+          <h2 class="role-title">Enterprise Architecture, <span class="gradient-text">Zero Vendor Lock-In</span></h2>
+          <p class="role-sub">
+            Engineering leaders cannot tolerate fragile black-box SaaS tools that leak corporate data or crumble under load. We build on transparent, self-hosted, code-extensible foundations.
+          </p>
+        </div>
+
+        <div class="exec-metrics-row">
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">&lt; 400ms</span>
+            <span class="exec-stat-title">Webhook Latency</span>
+            <p>High-throughput event execution with asynchronous queues and dead-letter retry buffers.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">100%</span>
+            <span class="exec-stat-title">Data Sovereignty</span>
+            <p>Deploy in your own VPC (AWS, GCP, Azure, or On-Prem) without third-party data egress.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">SOC2 / GDPR</span>
+            <span class="exec-stat-title">Security-First Patterns</span>
+            <p>Encrypted secret management, strict RBAC, automated execution logging, and isolated environments.</p>
+          </div>
+        </div>
+
+        <div class="cto-tech-deep-dive">
+          <div class="cto-tech-card">
+            <h3>Technical Architecture Highlights for Engineering Teams:</h3>
+            <ul class="tech-spec-list">
+              <li>
+                <strong>Self-Hosted Infrastructure:</strong> We deploy isolated workflow instances directly into your Kubernetes clusters or private Docker networks with strict network security policies.
+              </li>
+              <li>
+                <strong>Extensible Code Nodes:</strong> No frustrating low-code limits. Complex logic is written in native JavaScript / TypeScript or Python microservices with unit-testable schemas.
+              </li>
+              <li>
+                <strong>Secret Isolation:</strong> Zero hardcoded API keys. All credentials utilize HashiCorp Vault, AWS Secrets Manager, or encrypted environment stores with key rotation.
+              </li>
+              <li>
+                <strong>Observability & APM:</strong> Integration with Datadog, Prometheus, Grafana, and Sentry for real-time latency monitoring, payload tracing, and error alerting.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: FOR THE CMO & HEAD OF GROWTH -->
+    <!-- ============================================================ -->
+    <section id="cmo" class="section exec-role-section">
+      <div class="container">
+        <div class="role-header-box cmo-box">
+          <div class="role-badge cmo-badge">Office of the CMO</div>
+          <h2 class="role-title">Zero-Latency Lead Response & <span class="gradient-text">Revenue Acceleration</span></h2>
+          <p class="role-sub">
+            In B2B sales, speed-to-lead is everything. Responding in under 5 minutes increases conversion rates by 391%. FlowCraft eliminates lead lag completely.
+          </p>
+        </div>
+
+        <div class="exec-metrics-row">
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">&lt; 45s</span>
+            <span class="exec-stat-title">Lead-to-Rep Response</span>
+            <p>Instant API enrichment, lead scoring, and instant WhatsApp / Calendar dispatch to hot prospects.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">+42%</span>
+            <span class="exec-stat-title">Pipeline Conversion</span>
+            <p>Automated multi-channel touchpoints prevent qualified prospects from slipping through the cracks.</p>
+          </div>
+          <div class="exec-metric-card">
+            <span class="exec-stat-num">100%</span>
+            <span class="exec-stat-title">Attribution Precision</span>
+            <p>Sync ad spend data across Google Ads, Meta, and LinkedIn directly into CRM deals and data warehouses.</p>
+          </div>
+        </div>
+
+        <div class="exec-pillars-grid">
+          <div class="exec-pillar-card">
+            <div class="exec-icon">🎯</div>
+            <h3>Automated Lead Enrichment</h3>
+            <p>The second a prospect submits an email, our workflow queries Clearbit/Apollo APIs to fetch company size, tech stack, and LinkedIn profiles before creating an enriched record in HubSpot/Salesforce.</p>
+          </div>
+          <div class="exec-pillar-card">
+            <div class="exec-icon">💬</div>
+            <h3>Omnichannel Lifecycle Triggers</h3>
+            <p>Trigger highly targeted WhatsApp alerts, SMS notifications, and calendar invites when prospects visit pricing pages or sign high-value quotes.</p>
+          </div>
+          <div class="exec-pillar-card">
+            <div class="exec-icon">📈</div>
+            <h3>Unified Marketing Data Warehouse</h3>
+            <p>Consolidate CAC, LTV, ROAS, and deal velocity metrics from HubSpot, Stripe, and ad channels into clean executive summaries delivered automatically every morning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: INTEGRATED EXECUTIVE BRIEFING WITH GOOGLE CALENDAR -->
+    <!-- ============================================================ -->
+    <section id="executive-briefing" class="section exec-calendar-section">
+      <div class="container">
+        <div class="calendar-booking-card">
+          <div class="cal-header text-center">
+            <div class="badge badge-glow"><span>Direct C-Suite Availability</span></div>
+            <h2 class="section-title">Schedule an <span class="gradient-text">Executive Strategy Briefing</span></h2>
+            <p class="section-subtitle mx-auto max-w-700">
+              Pick a direct slot on our Lead Solutions Architect’s Google Calendar for an NDA-backed architectural and business roadmap consultation.
+            </p>
+          </div>
+
+          <!-- Interactive Google Calendar Booking Component -->
+          <div class="gcal-widget" id="gcal-executive-widget">
+            <div class="gcal-left-panel">
+              <div class="gcal-profile">
+                <div class="gcal-avatar">FC</div>
+                <div>
+                  <h4 class="gcal-host-name">FlowCraft Architecture Board</h4>
+                  <span class="gcal-meeting-type">30-Min Executive Strategy Call</span>
+                </div>
+              </div>
+
+              <div class="gcal-details-list">
+                <div class="gcal-detail-item">
+                  <span class="detail-icon">⏱️</span>
+                  <span>30 Minutes Duration</span>
+                </div>
+                <div class="gcal-detail-item">
+                  <span class="detail-icon">📹</span>
+                  <span>Google Meet Video (Link generated instantly)</span>
+                </div>
+                <div class="gcal-detail-item">
+                  <span class="detail-icon">🔒</span>
+                  <span>Syncs directly to Google Calendar</span>
+                </div>
+                <div class="gcal-detail-item">
+                  <span class="detail-icon">📧</span>
+                  <span>Host: <code class="text-cyan">AmjadKhaliliah1998@gmail.com</code></span>
+                </div>
+              </div>
+
+              <div class="gcal-sync-badge">
+                <span class="status-dot"></span> Google Calendar API Active (Mock Synchronized)
+              </div>
+            </div>
+
+            <div class="gcal-right-panel">
+              <!-- Calendar Date Picker & Time Slots -->
+              <div class="gcal-picker-step" id="cal-step-1">
+                <h4 class="gcal-step-title">1. Select a Date & Time</h4>
+                
+                <div class="cal-date-strip" id="cal-date-strip">
+                  <!-- Dynamically populated dates in app.js -->
+                </div>
+
+                <h5 class="slot-heading">Available Time Slots (<span id="selected-tz-label">UTC+3 / Jerusalem / Remote</span>):</h5>
+                <div class="cal-slots-grid" id="cal-slots-grid">
+                  <button type="button" class="slot-btn active" data-time="09:00 AM">09:00 AM</button>
+                  <button type="button" class="slot-btn" data-time="10:30 AM">10:30 AM</button>
+                  <button type="button" class="slot-btn" data-time="01:00 PM">01:00 PM</button>
+                  <button type="button" class="slot-btn" data-time="02:30 PM">02:30 PM</button>
+                  <button type="button" class="slot-btn" data-time="04:00 PM">04:00 PM</button>
+                  <button type="button" class="slot-btn" data-time="05:30 PM">05:30 PM</button>
+                </div>
+
+                <div class="mt-4">
+                  <button type="button" class="btn btn-primary w-full" id="btn-proceed-details" onclick="proceedToCalDetails()">
+                    <span>Continue to Executive Details</span>
+                    <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Executive Details Form -->
+              <div class="gcal-picker-step" id="cal-step-2" style="display: none;">
+                <div class="gcal-back-header">
+                  <button type="button" class="btn-text-back" onclick="backToCalDates()">← Back to Date Selection</button>
+                  <span class="selected-slot-summary" id="slot-summary-text">Oct 5, 2026 at 10:30 AM</span>
+                </div>
+
+                <form id="exec-gcal-form" onsubmit="handleExecutiveBooking(event)">
+                  <div class="form-row-2">
+                    <div class="form-group">
+                      <label for="exec-name">Your Full Name *</label>
+                      <input type="text" id="exec-name" required placeholder="Elena Rostova">
+                    </div>
+                    <div class="form-group">
+                      <label for="exec-role">Executive Title *</label>
+                      <select id="exec-role" required>
+                        <option value="CEO">CEO / Managing Director</option>
+                        <option value="CTO">CTO / VP of Engineering</option>
+                        <option value="CMO">CMO / VP of Marketing</option>
+                        <option value="COO">COO / Head of Operations</option>
+                        <option value="CFO">CFO / Finance Director</option>
+                        <option value="Other">Other Executive</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row-2">
+                    <div class="form-group">
+                      <label for="exec-email">Corporate Email *</label>
+                      <input type="email" id="exec-email" required placeholder="elena@enterprise.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="exec-company">Company Name & Team Size *</label>
+                      <input type="text" id="exec-company" required placeholder="Global Logistics Corp (50+ employees)">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exec-focus">Primary Strategic Mandate *</label>
+                    <textarea id="exec-focus" rows="2" required placeholder="e.g. EBITDA margin expansion, legacy ERP sync, lead routing velocity..."></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-full btn-lg">
+                    <span>Confirm & Add to Google Calendar</span>
+                    <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Step 3: Google Calendar Confirmation State -->
+              <div class="gcal-picker-step" id="cal-step-3" style="display: none;">
+                <div class="gcal-success-card">
+                  <div class="gcal-success-icon">📅</div>
+                  <h3 class="gcal-success-title">Executive Briefing Confirmed!</h3>
+                  <p class="gcal-success-msg">Your meeting has been scheduled and synchronized with Google Calendar.</p>
+
+                  <div class="gcal-event-box">
+                    <div class="event-row"><strong>Meeting:</strong> FlowCraft Executive Strategy Briefing</div>
+                    <div class="event-row"><strong>Date & Time:</strong> <span id="conf-datetime" class="text-cyan">Oct 5, 2026 @ 10:30 AM (UTC+3)</span></div>
+                    <div class="event-row"><strong>Google Meet:</strong> <a href="#" id="conf-meet-link" target="_blank" class="text-cyan">meet.google.com/flw-exec-briefing</a></div>
+                    <div class="event-row"><strong>Host:</strong> AmjadKhaliliah1998@gmail.com</div>
+                  </div>
+
+                  <div class="gcal-actions-row">
+                    <a href="#" id="btn-direct-gcal-link" target="_blank" class="btn btn-primary">
+                      <span>Open in Google Calendar ↗</span>
+                    </a>
+                    <button type="button" class="btn btn-secondary" onclick="downloadIcsFile()">
+                      <span>Download .ICS File</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col-brand">
+          <a href="index.html" class="logo-link">
+            <div class="logo-icon">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="8" cy="16" r="3.5" class="logo-node node-1" />
+                <circle cx="24" cy="9" r="3.5" class="logo-node node-2" />
+                <circle cx="24" cy="23" r="3.5" class="logo-node node-3" />
+                <path d="M8 16L24 9" class="logo-wire wire-1" stroke-width="2.2"/>
+                <path d="M8 16L24 23" class="logo-wire wire-2" stroke-width="2.2"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="brand-title">FlowCraft</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Strategic Business Process Automation & AI Integration for forward-thinking leadership.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Executive Sections</h4>
+          <ul class="footer-links">
+            <li><a href="#ceo">For CEOs (Margin & Leverage)</a></li>
+            <li><a href="#cto">For CTOs (VPC & Architecture)</a></li>
+            <li><a href="#cmo">For CMOs (Lead Velocity)</a></li>
+            <li><a href="#executive-briefing">Book Board Briefing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Main Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#solutions">Solutions Overview</a></li>
+            <li><a href="index.html#services">Services & Architecture</a></li>
+            <li><a href="index.html#pricing">Engagement Models</a></li>
+            <li><a href="index.html#assessment">Free Automation Assessment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Consultancy & Direct Contact</h4>
+          <p class="footer-subtext">Palestine | Remote Worldwide</p>
+          <p class="footer-subtext">Email: <a href="mailto:AmjadKhaliliah1998@gmail.com" class="text-cyan">AmjadKhaliliah1998@gmail.com</a></p>
+          <p class="footer-subtext">WhatsApp: <a href="https://wa.me/970595457008" target="_blank" class="text-emerald">+970 595 457 008</a></p>
+          <div class="footer-status-pill">
+            <span class="status-dot"></span> C-Suite Calendar Connected
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-copy">© 2026 FlowCraft. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="index.html">Main Website</a>
+          <a href="#main-header" class="back-to-top">↑ Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Component for Consultations -->
+  <div id="consultation-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" onclick="closeConsultationModal()" aria-label="Close modal">✕</button>
+      
+      <div class="modal-header">
+        <div class="badge badge-glow"><span>Google Calendar Integrated</span></div>
+        <h3 id="modal-title" class="modal-title">Book Executive Briefing</h3>
+        <p class="modal-sub">Schedule a 30-minute discovery session with our senior automation architects.</p>
+      </div>
+
+      <form id="consultation-form" onsubmit="handleConsultationSubmit(event)">
+        <input type="hidden" id="modal-package-name" value="Executive Strategic Briefing">
+        
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="m-name">Full Name *</label>
+            <input type="text" id="m-name" required placeholder="Alex Rivera">
+          </div>
+          <div class="form-group">
+            <label for="m-company">Company Name *</label>
+            <input type="text" id="m-company" required placeholder="Rivera Global">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="m-email">Corporate Email *</label>
+            <input type="email" id="m-email" required placeholder="alex@rivera.com">
+          </div>
+          <div class="form-group">
+            <label for="m-phone">Phone / WhatsApp</label>
+            <input type="text" id="m-phone" placeholder="+1 (555) 000-0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="m-topic">Strategic Focus Area</label>
+          <select id="m-topic">
+            <option value="ceo">CEO: EBITDA Margin & Headcount Scaling</option>
+            <option value="cto">CTO: VPC Architecture, Security & Self-Hosting</option>
+            <option value="cmo">CMO: Speed-to-Lead & Revenue Attribution</option>
+            <option value="general">Comprehensive Enterprise Review</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="m-notes">Brief Overview of Your Current Bottleneck</label>
+          <textarea id="m-notes" rows="3" placeholder="Describe your current systems and objectives..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full btn-lg">
+          <span>Confirm & Schedule on Google Calendar</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <div class="toast-icon">✅</div>
+    <div class="toast-content">
+      <strong id="toast-title">Scheduled</strong>
+      <p id="toast-body">Event synchronized with Google Calendar.</p>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Action Button -->
+  <a href="https://wa.me/970595457008?text=Hello%20Amjad%2C%20I%20am%20interested%20in%20FlowCraft%20executive%20strategic%20briefing." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp (+970 595 457 008)">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.03C9.34 7.03 9.04 7.1 8.78 7.39C8.52 7.68 7.78 8.37 7.78 9.78C7.78 11.19 8.81 12.55 8.95 12.74C9.1 12.93 10.96 15.8 13.82 17.03C14.5 17.33 15.03 17.51 15.44 17.64C16.12 17.86 16.74 17.83 17.23 17.76C17.78 17.68 18.91 17.07 19.15 16.41C19.38 15.75 19.38 15.18 19.31 15.06C19.24 14.94 19.06 14.88 18.78 14.74C18.5 14.6 17.16 13.94 16.91 13.85C16.66 13.76 16.48 13.71 16.3 13.99C16.11 14.27 15.58 14.88 15.42 15.06C15.26 15.25 15.1 15.27 14.82 15.13C14.54 14.99 13.65 14.7 12.59 13.75C11.77 13.02 11.21 12.11 11.05 11.83C10.89 11.55 11.03 11.4 11.17 11.26C11.3 11.13 11.45 10.93 11.6 10.76C11.74 10.59 11.79 10.46 11.88 10.28C11.97 10.1 11.93 9.94 11.86 9.8C11.79 9.66 11.23 8.28 11 7.73C10.77 7.2 10.54 7.27 10.37 7.26C10.21 7.26 10.02 7.25 9.84 7.25C9.65 7.25 9.53 7.03 9.53 7.03Z"/></svg>
+    <span class="floating-whatsapp-tooltip">Chat with Amjad on WhatsApp</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>

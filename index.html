@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowCraft — Business Process Automation & AI Integration</title>
+  <meta name="description" content="FlowCraft designs and builds custom automation workflows and AI integrations that connect your business systems, eliminate repetitive tasks, reduce operational costs, and accelerate your operations.">
+  <meta name="keywords" content="business process automation, AI integration, n8n automation, custom workflow consulting, system integration, document automation, CRM automation, enterprise workflow">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FlowCraft — Business Process Automation & AI Integration">
+  <meta property="og:description" content="Automate the work behind your business. Custom workflows, system integrations, and intelligent AI automation built for modern enterprises.">
+  <meta property="og:url" content="https://flowcraft.dev">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon / Brand SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='32' y2='32' gradientUnits='userSpaceOnUse'><stop stop-color='%2300E5FF'/><stop offset='1' stop-color='%236366F1'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%23080C14'/><circle cx='9' cy='16' r='4' fill='%2300E5FF'/><circle cx='23' cy='9' r='4' fill='%236366F1'/><circle cx='23' cy='23' r='4' fill='%238B5CF6'/><path d='M9 16L23 9M9 16L23 23' stroke='url(%23g)' stroke-width='2.5' stroke-linecap='round'/></svg>">
+</head>
+<body>
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="glow-mesh glow-top-left" aria-hidden="true"></div>
+  <div class="glow-mesh glow-top-right" aria-hidden="true"></div>
+  <div class="glow-mesh glow-center" aria-hidden="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- 1. NAVIGATION / HEADER -->
+  <!-- ============================================================ -->
+  <header id="main-header" class="header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#hero" class="logo-link" aria-label="FlowCraft Home">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="16" r="3.5" class="logo-node node-1" />
+            <circle cx="24" cy="9" r="3.5" class="logo-node node-2" />
+            <circle cx="24" cy="23" r="3.5" class="logo-node node-3" />
+            <path d="M8 16L24 9" class="logo-wire wire-1" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M8 16L24 23" class="logo-wire wire-2" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">FlowCraft</span>
+          <span class="brand-tagline">Automation & AI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
+          <li><a href="#industries" class="nav-link">Industries</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="executive.html" class="nav-link">Executive <span class="nav-tag-csuite">C-Suite</span></a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-ghost hide-mobile">Contact Us</a>
+        <button class="btn btn-primary" onclick="openConsultationModal()">
+          <span>Book a Free Consultation</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <nav class="mobile-nav">
+        <a href="#hero" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+        <a href="executive.html" class="mobile-nav-link" onclick="closeMobileMenu()" style="color: var(--gold-ceo);">👑 Executive Hub (CEO, CTO, CMO)</a>
+        <a href="#solutions" class="mobile-nav-link" onclick="closeMobileMenu()">Solutions</a>
+        <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+        <a href="#how-it-works" class="mobile-nav-link" onclick="closeMobileMenu()">How It Works</a>
+        <a href="#use-cases" class="mobile-nav-link" onclick="closeMobileMenu()">Use Cases</a>
+        <a href="#industries" class="mobile-nav-link" onclick="closeMobileMenu()">Industries</a>
+        <a href="#pricing" class="mobile-nav-link" onclick="closeMobileMenu()">Pricing</a>
+        <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+        <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact Us</a>
+        <div class="mobile-drawer-cta">
+          <button class="btn btn-primary w-full" onclick="closeMobileMenu(); openConsultationModal();">Book a Free Consultation</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================ -->
+    <!-- 2. HERO SECTION -->
+    <!-- ============================================================ -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Positioning Tag -->
+          <div class="badge badge-glow">
+            <span class="badge-dot"></span>
+            <span>Business Process Automation & AI Integration</span>
+          </div>
+
+          <h1 class="hero-title">
+            Automate the Work <br class="hide-mobile">
+            <span class="gradient-text">Behind Your Business.</span>
+          </h1>
+
+          <p class="hero-description">
+            We design and implement custom business automation workflows that connect your systems, eliminate repetitive work, reduce operational costs, and help your team operate faster.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+              <span>Book a Free Consultation</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <a href="#solutions" class="btn btn-secondary btn-lg">
+              <span>Explore Our Solutions</span>
+            </a>
+          </div>
+
+          <!-- Hero Trust Statement & Badges -->
+          <div class="hero-trust">
+            <div class="hero-trust-text">
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>From repetitive tasks to automated workflows.</span>
+            </div>
+            <div class="hero-badges">
+              <span class="pill-badge">⚡ 100+ Enterprise Connectors</span>
+              <span class="pill-badge">🔒 Self-Hosted & Cloud Ready</span>
+              <span class="pill-badge">🧠 Deep AI & LLM Pipelines</span>
+              <span class="pill-badge">📅 Google Calendar Sync</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Interactive Animated Workflow Canvas -->
+        <div class="hero-visual-wrapper">
+          <div class="workflow-card">
+            <div class="workflow-card-header">
+              <div class="window-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="workflow-title-bar">
+                <span class="workflow-status-live"><span class="pulse-indicator"></span> LIVE ENGINE</span>
+                <span class="workflow-label">Customer_Request_Pipeline.v4</span>
+              </div>
+              <button class="btn-sim-trigger" id="btn-trigger-sim" title="Simulate Workflow Run">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M4 3v10l8-5-8-5z"/></svg>
+                <span>Run Demo</span>
+              </button>
+            </div>
+
+            <div class="workflow-canvas" id="hero-workflow-canvas">
+              <!-- SVG Connectivity Layer with animated pulsing pulses -->
+              <svg class="workflow-svg-layer" viewBox="0 0 500 380" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="wireGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#6366F1" stop-opacity="0.8"/>
+                  </linearGradient>
+                  <linearGradient id="wireGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6366F1" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+                  </linearGradient>
+                </defs>
+                <!-- Wire Paths -->
+                <path id="path-1" class="flow-wire" d="M 250 55 L 250 115" />
+                <path id="path-2a" class="flow-wire" d="M 250 165 C 250 190, 130 190, 130 220" />
+                <path id="path-2b" class="flow-wire" d="M 250 165 C 250 190, 370 190, 370 220" />
+                <path id="path-3a" class="flow-wire" d="M 130 270 C 130 295, 250 295, 250 325" />
+                <path id="path-3b" class="flow-wire" d="M 370 270 C 370 295, 250 295, 250 325" />
+
+                <!-- Animated Data Packets -->
+                <circle class="data-packet packet-1" r="4" fill="#00E5FF"/>
+                <circle class="data-packet packet-2a" r="4" fill="#6366F1"/>
+                <circle class="data-packet packet-2b" r="4" fill="#8B5CF6"/>
+                <circle class="data-packet packet-3a" r="4" fill="#10B981"/>
+                <circle class="data-packet packet-3b" r="4" fill="#10B981"/>
+              </svg>
+
+              <!-- Node 1: Customer Request -->
+              <div class="flow-node node-top active-node" style="top: 15px; left: 50%; transform: translateX(-50%);">
+                <div class="node-icon bg-cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/></svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-label">TRIGGER</span>
+                  <strong class="node-title">Customer Request</strong>
+                  <span class="node-sub">Webhook / Email / Form</span>
+                </div>
+              </div>
+
+              <!-- Node 2: CRM Hub -->
+              <div class="flow-node node-center" style="top: 115px; left: 50%; transform: translateX(-50%);">
+                <div class="node-icon bg-indigo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-label">SYSTEM</span>
+                  <strong class="node-title">CRM Sync</strong>
+                  <span class="node-sub">HubSpot / Salesforce</span>
+                </div>
+              </div>
+
+              <!-- Node 3A: AI Processing -->
+              <div class="flow-node node-branch-left" style="top: 220px; left: 70px;">
+                <div class="node-icon bg-purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V14h-4V9.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-label">INTELLIGENCE</span>
+                  <strong class="node-title">AI Processing</strong>
+                  <span class="node-sub">Extract & Classify</span>
+                </div>
+              </div>
+
+              <!-- Node 3B: Database -->
+              <div class="flow-node node-branch-right" style="top: 220px; right: 70px;">
+                <div class="node-icon bg-blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-label">DATA STORE</span>
+                  <strong class="node-title">Database Log</strong>
+                  <span class="node-sub">PostgreSQL / BigQuery</span>
+                </div>
+              </div>
+
+              <!-- Node 4: Notification -->
+              <div class="flow-node node-bottom" style="top: 325px; left: 50%; transform: translateX(-50%);">
+                <div class="node-icon bg-emerald">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-label">OUTPUT</span>
+                  <strong class="node-title">Instant Notification</strong>
+                  <span class="node-sub">Slack / WhatsApp / Email</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workflow Metric Footer -->
+            <div class="workflow-card-footer">
+              <div class="metric-pill">
+                <span class="metric-val">340ms</span>
+                <span class="metric-desc">Avg Execution</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-val">100%</span>
+                <span class="metric-desc">Accuracy</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-val">0 Manual Steps</span>
+                <span class="metric-desc">Hands-Free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- EXECUTIVE TEASER SECTION (New C-Suite Spotlight) -->
+    <!-- ============================================================ -->
+    <section class="section exec-teaser-section">
+      <div class="container">
+        <div class="exec-teaser-card">
+          <div>
+            <span class="exec-teaser-badge">👑 Strategic Leadership Perspective</span>
+            <h2 class="exec-teaser-title">Are you a CEO, CTO, or CMO?</h2>
+            <p class="exec-teaser-desc">
+              We provide tailored strategic blueprints showing how custom automation drives <strong>EBITDA margin expansion for CEOs</strong>, <strong>data sovereignty and VPC architecture for CTOs</strong>, and <strong>sub-minute lead response velocity for CMOs</strong>.
+            </p>
+            <a href="executive.html" class="btn btn-primary">
+              <span>Explore the Executive Leadership Hub</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="exec-teaser-roles">
+            <a href="executive.html#ceo" class="teaser-role-link">
+              <div>
+                <div class="teaser-role-name">👔 For the Chief Executive Officer</div>
+                <span class="teaser-role-sub">+28% Margin Leverage & Headcount-Free Scale</span>
+              </div>
+              <span>→</span>
+            </a>
+            <a href="executive.html#cto" class="teaser-role-link">
+              <div>
+                <div class="teaser-role-name">💻 For the Chief Technology Officer</div>
+                <span class="teaser-role-sub">VPC Deployment, SOC2 Patterns & No Lock-in</span>
+              </div>
+              <span>→</span>
+            </a>
+            <a href="executive.html#cmo" class="teaser-role-link">
+              <div>
+                <div class="teaser-role-name">📈 For the Chief Marketing Officer</div>
+                <span class="teaser-role-sub">&lt;45s Speed-to-Lead & 100% Attribution</span>
+              </div>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. PROBLEM SECTION -->
+    <!-- ============================================================ -->
+    <section id="problems" class="section problem-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">The Operational Cost of Friction</span>
+          <h2 class="section-title">Your Team Shouldn't Spend Its Day <br><span class="gradient-text-red">Doing Repetitive Work.</span></h2>
+          <p class="section-subtitle">
+            Growing companies lose hundreds of productive hours each month to disjointed software stacks, manual re-entry, and human bottlenecks.
+          </p>
+        </div>
+
+        <div class="problem-cards-grid">
+          <!-- Card 1 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="problem-card-title">Manual Data Entry</h3>
+            <p class="problem-card-text">
+              Employees repeatedly copy and paste information between spreadsheets, disparate SaaS tools, incoming emails, and legacy databases.
+            </p>
+            <div class="problem-impact">⚠️ Time sink & low employee morale</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            </div>
+            <h3 class="problem-card-title">Repetitive Processes</h3>
+            <p class="problem-card-text">
+              The exact same administrative steps are performed manually every single day, inflating operational payroll and scaling linearly with headcount.
+            </p>
+            <div class="problem-impact">⚠️ Inefficient operational scaling</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/><line x1="18" y1="10" x2="18" y2="14" stroke-dasharray="2 2"/></svg>
+            </div>
+            <h3 class="problem-card-title">Disconnected Systems</h3>
+            <p class="problem-card-text">
+              Your CRM, ERP, finance, email, databases, and custom software exist in functional silos that fail to communicate or sync state in real time.
+            </p>
+            <div class="problem-impact">⚠️ Data fragmentation & blind spots</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3 class="problem-card-title">Human Error</h3>
+            <p class="problem-card-text">
+              Manual rekeying introduces costly typos, dropped invoices, forgotten customer follow-ups, and inconsistent cross-department records.
+            </p>
+            <div class="problem-impact">⚠️ Costly mistakes & compliance risk</div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="problem-card-title">Slow Response Times</h3>
+            <p class="problem-card-text">
+              High-priority customer inquiries, approval requests, and fulfillment orders sit idle for hours or days waiting on human intervention.
+            </p>
+            <div class="problem-impact">⚠️ Lost deals & frustrated customers</div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </div>
+            <h3 class="problem-card-title">No Real-Time Visibility</h3>
+            <p class="problem-card-text">
+              Managers and leadership lack centralized visibility into execution health, throughput velocity, operational bottlenecks, and SLA breaches.
+            </p>
+            <div class="problem-impact">⚠️ Reactive decision making</div>
+          </div>
+        </div>
+
+        <!-- Problem Banner Callout -->
+        <div class="problem-bottom-banner">
+          <div class="problem-banner-content">
+            <span class="banner-badge">The FlowCraft Promise</span>
+            <h3 class="banner-heading">We turn these fragmented processes into robust, automated workflows.</h3>
+            <p class="banner-text">Eliminate manual overhead once and for all with custom-architected integrations designed for resilience.</p>
+          </div>
+          <a href="#solutions" class="btn btn-primary">See How We Solve It</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. SOLUTION SECTION -->
+    <!-- ============================================================ -->
+    <section id="solutions" class="section solution-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Our Core Architecture</span>
+          <h2 class="section-title">We Turn Business Processes Into <br><span class="gradient-text">Automated Workflows</span></h2>
+          <p class="section-subtitle">
+            A three-pillar methodology that links your infrastructure, orchestrates end-to-end tasks, and applies AI models where they create true business leverage.
+          </p>
+        </div>
+
+        <div class="solution-pillars-grid">
+          <!-- Pillar 1: CONNECT -->
+          <div class="pillar-card pillar-connect">
+            <div class="pillar-header">
+              <div class="pillar-number">01</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">CONNECT</h3>
+            <p class="pillar-tagline">Bridge your existing systems into a unified data ecosystem.</p>
+            
+            <div class="pillar-tag-list">
+              <span class="tech-tag">CRM & Sales</span>
+              <span class="tech-tag">ERP & Finance</span>
+              <span class="tech-tag">Relational DBs</span>
+              <span class="tech-tag">Email & Messaging</span>
+              <span class="tech-tag">WhatsApp API</span>
+              <span class="tech-tag">Custom REST APIs</span>
+              <span class="tech-tag">Cloud Services</span>
+              <span class="tech-tag">Legacy Systems</span>
+            </div>
+
+            <p class="pillar-desc">
+              No need to replace software your team already knows. We engineer bi-directional connectors that ensure data flows effortlessly across every tool.
+            </p>
+          </div>
+
+          <!-- Pillar 2: AUTOMATE -->
+          <div class="pillar-card pillar-automate highlight-pillar">
+            <div class="pillar-badge-popular">CORE ENGINE</div>
+            <div class="pillar-header">
+              <div class="pillar-number">02</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">AUTOMATE</h3>
+            <p class="pillar-tagline">Orchestrate complex business rules with 24/7 reliability.</p>
+            
+            <div class="pillar-tag-list">
+              <span class="tech-tag">Data Processing</span>
+              <span class="tech-tag">Event Notifications</span>
+              <span class="tech-tag">Multi-tier Approvals</span>
+              <span class="tech-tag">Document Pipelines</span>
+              <span class="tech-tag">Automated Reports</span>
+              <span class="tech-tag">Customer Requests</span>
+              <span class="tech-tag">Internal Operations</span>
+              <span class="tech-tag">Scheduled Syncs</span>
+            </div>
+
+            <p class="pillar-desc">
+              From trigger to execution, your standard operating procedures execute in milliseconds with full error handling, retries, and audit logs.
+            </p>
+          </div>
+
+          <!-- Pillar 3: INTELLIGENT -->
+          <div class="pillar-card pillar-intelligent">
+            <div class="pillar-header">
+              <div class="pillar-number">03</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">INTELLIGENT</h3>
+            <p class="pillar-tagline">Embed AI models where they create true commercial value.</p>
+            
+            <div class="pillar-tag-list">
+              <span class="tech-tag">Document Extraction</span>
+              <span class="tech-tag">Intent Classification</span>
+              <span class="tech-tag">Smart Summarization</span>
+              <span class="tech-tag">Internal AI Assistants</span>
+              <span class="tech-tag">Decision Support</span>
+              <span class="tech-tag">RAG Knowledge Base</span>
+              <span class="tech-tag">Natural Language Ops</span>
+              <span class="tech-tag">Sentiment Routing</span>
+            </div>
+
+            <p class="pillar-desc">
+              Go beyond simple if-then logic. Integrate state-of-the-art LLMs and OCR to interpret unstructured emails, PDFs, and unstructured requests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. SERVICES SECTION -->
+    <!-- ============================================================ -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">End-to-End Capabilities</span>
+          <h2 class="section-title">What We <span class="gradient-text">Automate</span></h2>
+          <p class="section-subtitle">
+            Comprehensive workflow engineering tailored to your operational architecture and business objectives.
+          </p>
+        </div>
+
+        <div class="services-list">
+          <!-- Service 1 -->
+          <div class="service-row">
+            <div class="service-info">
+              <div class="service-tag">Core Infrastructure</div>
+              <h3 class="service-title">Business Process Automation</h3>
+              <p class="service-description">
+                Eliminate friction across every department by converting recurring manual workflows into autonomous, self-healing background pipelines.
+              </p>
+              <div class="service-examples">
+                <span class="example-item">✓ Multi-stage approval routing</span>
+                <span class="example-item">✓ Automated team task assignment</span>
+                <span class="example-item">✓ Multi-channel event alerts</span>
+                <span class="example-item">✓ Scheduled data backups & syncs</span>
+                <span class="example-item">✓ SLA & timeout monitoring</span>
+                <span class="example-item">✓ Real-time status updates</span>
+              </div>
+            </div>
+            <div class="service-visual">
+              <div class="mock-diagram">
+                <div class="diagram-step">Trigger: Status Change</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-step">Evaluate Logic & Permissions</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-branch">
+                  <div class="diagram-step mini">Approve: Update DB</div>
+                  <div class="diagram-step mini">Escalate: Notify Lead</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-row reverse">
+            <div class="service-info">
+              <div class="service-tag">Architecture</div>
+              <h3 class="service-title">System Integration</h3>
+              <p class="service-description">
+                Connect the tools your business already relies on. We link legacy databases, modern SaaS apps, internal servers, and public APIs into one unified ecosystem.
+              </p>
+              <div class="service-examples">
+                <span class="example-item">✓ CRM & ERP bi-directional sync</span>
+                <span class="example-item">✓ Custom REST / GraphQL APIs</span>
+                <span class="example-item">✓ SQL / NoSQL database bridges</span>
+                <span class="example-item">✓ Cloud infrastructure webhooks</span>
+                <span class="example-item">✓ Payment gateway synchronization</span>
+                <span class="example-item">✓ Legacy CSV & FTP ingest pipelines</span>
+              </div>
+            </div>
+            <div class="service-visual">
+              <div class="mock-diagram">
+                <div class="integration-node-grid">
+                  <div class="int-box">Salesforce</div>
+                  <div class="int-center">FlowCraft Engine</div>
+                  <div class="int-box">SAP ERP</div>
+                  <div class="int-box">PostgreSQL</div>
+                  <div class="int-box">Slack</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-row">
+            <div class="service-info">
+              <div class="service-tag">Artificial Intelligence</div>
+              <h3 class="service-title">AI Automation</h3>
+              <p class="service-description">
+                Combine workflow automation with advanced language models to execute tasks that previously required human comprehension and manual review.
+              </p>
+              <div class="service-examples">
+                <span class="example-item">✓ Document classification & OCR</span>
+                <span class="example-item">✓ Key entity & data extraction</span>
+                <span class="example-item">✓ Executive summarization</span>
+                <span class="example-item">✓ RAG company knowledge bots</span>
+                <span class="example-item">✓ Automated email triage</span>
+                <span class="example-item">✓ Intelligent sentiment routing</span>
+              </div>
+            </div>
+            <div class="service-visual">
+              <div class="mock-diagram">
+                <div class="diagram-step">Unstructured Inbound Payload</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-step ai-step">✨ AI Model: Extraction & Reasoning</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-step">Structured JSON → Targeted Action</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-row reverse">
+            <div class="service-info">
+              <div class="service-tag">Document Intelligence</div>
+              <h3 class="service-title">Document Automation</h3>
+              <p class="service-description">
+                Automate the end-to-end lifecycle of critical business documents — from raw PDF ingestion and OCR parsing to dynamic generation and archival.
+              </p>
+              <div class="service-examples">
+                <span class="example-item">✓ Invoice & receipt processing</span>
+                <span class="example-item">✓ Automated PDF proposal generation</span>
+                <span class="example-item">✓ Contract creation & e-sign triggers</span>
+                <span class="example-item">✓ Secure cloud document archiving</span>
+              </div>
+            </div>
+            <div class="service-visual">
+              <div class="pipeline-visual" id="doc-pipeline">
+                <div class="pipeline-track">
+                  <div class="p-node active" data-step="1"><span class="p-num">1</span><span class="p-name">Input</span></div>
+                  <div class="p-node" data-step="2"><span class="p-num">2</span><span class="p-name">Extract</span></div>
+                  <div class="p-node" data-step="3"><span class="p-num">3</span><span class="p-name">Validate</span></div>
+                  <div class="p-node" data-step="4"><span class="p-num">4</span><span class="p-name">Generate</span></div>
+                  <div class="p-node" data-step="5"><span class="p-num">5</span><span class="p-name">PDF</span></div>
+                  <div class="p-node" data-step="6"><span class="p-num">6</span><span class="p-name">Archive</span></div>
+                  <div class="p-node" data-step="7"><span class="p-num">7</span><span class="p-name">Notify</span></div>
+                </div>
+                <div class="pipeline-output" id="pipeline-status-text">
+                  <span class="badge-mini">Pipeline Status</span>
+                  <p>Step 1: Ingesting raw PDF from Email / S3 bucket...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-row">
+            <div class="service-info">
+              <div class="service-tag">Business Intelligence</div>
+              <h3 class="service-title">Reporting & Notifications</h3>
+              <p class="service-description">
+                Automatically aggregate operational metrics across disparate platforms and deliver clear executive summaries to leadership in real time.
+              </p>
+              <div class="service-examples">
+                <span class="example-item">✓ Daily / weekly executive digests</span>
+                <span class="example-item">✓ Real-time WhatsApp / Slack alerts</span>
+                <span class="example-item">✓ Custom live management dashboards</span>
+                <span class="example-item">✓ Instant anomaly & outage triggers</span>
+                <span class="example-item">✓ KPI progress & goal tracking</span>
+              </div>
+            </div>
+            <div class="service-visual">
+              <div class="mock-diagram">
+                <div class="report-box">
+                  <div class="report-header">📊 Morning Operations Brief — 08:00 AM</div>
+                  <div class="report-item">🟢 New Leads Processed: <strong>142</strong> (Synced to CRM)</div>
+                  <div class="report-item">🟢 Invoices Reconciled: <strong>$84,200</strong></div>
+                  <div class="report-item">🟢 System Health: <strong>100% Normal</strong></div>
+                  <div class="report-footer">Delivered to #management on Slack & WhatsApp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 6. BUILT WITH n8n SECTION -->
+    <!-- ============================================================ -->
+    <section class="section n8n-section">
+      <div class="container">
+        <div class="n8n-container-box">
+          <div class="n8n-grid">
+            <div class="n8n-text">
+              <div class="badge badge-glow">
+                <span>Enterprise Automation Engine</span>
+              </div>
+              <h2 class="section-title">Powered by Flexible <br><span class="gradient-text">Workflow Automation</span></h2>
+              <p class="section-subtitle-left">
+                We leverage <strong>n8n</strong> as a battle-tested, highly extensible workflow automation engine to engineer custom, transparent, and self-maintainable solutions tailored exactly to your business architecture.
+              </p>
+              
+              <h3 class="n8n-why-title">Why We Build On n8n:</h3>
+              <div class="n8n-features-grid">
+                <div class="n8n-feat">
+                  <span class="n8n-feat-icon">⚡</span>
+                  <div>
+                    <strong>API-First Architecture</strong>
+                    <p>Connect any proprietary or public REST / GraphQL endpoint seamlessly.</p>
+                  </div>
+                </div>
+                <div class="n8n-feat">
+                  <span class="n8n-feat-icon">🔒</span>
+                  <div>
+                    <strong>Self-Hosting Capability</strong>
+                    <p>Deploy entirely in your private cloud (AWS, Azure, GCP, or On-Prem) for 100% data residency.</p>
+                  </div>
+                </div>
+                <div class="n8n-feat">
+                  <span class="n8n-feat-icon">🔌</span>
+                  <div>
+                    <strong>400+ Ready Connectors</strong>
+                    <p>Accelerate builds with pre-integrated nodes while retaining full code flexibility.</p>
+                  </div>
+                </div>
+                <div class="n8n-feat">
+                  <span class="n8n-feat-icon">🛠️</span>
+                  <div>
+                    <strong>Zero Vendor Lock-In</strong>
+                    <p>Visual, auditable workflows that your internal IT team can own and inspect anytime.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="n8n-visual">
+              <div class="n8n-flow-diagram">
+                <div class="n8n-diagram-header">
+                  <div class="n8n-badge">n8n Execution Graph</div>
+                  <span class="n8n-active-tag">● Running</span>
+                </div>
+                
+                <div class="n8n-node-chain">
+                  <div class="n8n-node">
+                    <div class="n8n-icon-box bg-cyan">📧</div>
+                    <div class="n8n-info">
+                      <span class="n8n-step-label">Node 01</span>
+                      <strong>Inbound Email Trigger</strong>
+                    </div>
+                  </div>
+                  <div class="n8n-connector"></div>
+
+                  <div class="n8n-node">
+                    <div class="n8n-icon-box bg-indigo">⚙️</div>
+                    <div class="n8n-info">
+                      <span class="n8n-step-label">Node 02</span>
+                      <strong>Extract Payload & Metadata</strong>
+                    </div>
+                  </div>
+                  <div class="n8n-connector"></div>
+
+                  <div class="n8n-node highlight">
+                    <div class="n8n-icon-box bg-purple">🧠</div>
+                    <div class="n8n-info">
+                      <span class="n8n-step-label">Node 03</span>
+                      <strong>AI Analysis & Intent Route</strong>
+                    </div>
+                  </div>
+                  <div class="n8n-connector-split"></div>
+
+                  <div class="n8n-branch-row">
+                    <div class="n8n-node mini">
+                      <div class="n8n-icon-box bg-blue">🗄️</div>
+                      <div class="n8n-info">
+                        <span class="n8n-step-label">Branch A</span>
+                        <strong>Update DB</strong>
+                      </div>
+                    </div>
+                    <div class="n8n-node mini">
+                      <div class="n8n-icon-box bg-emerald">💬</div>
+                      <div class="n8n-info">
+                        <span class="n8n-step-label">Branch B</span>
+                        <strong>Send Alert</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="n8n-diagram-footer">
+                  <span>Custom JS / Python Nodes • Sub-second Orchestration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 7. AI + AUTOMATION SECTION -->
+    <!-- ============================================================ -->
+    <section class="section ai-automation-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">The Competitive Edge</span>
+          <h2 class="section-title">Automation Meets <span class="gradient-text">Artificial Intelligence</span></h2>
+          <p class="section-subtitle">
+            Not every process should simply be hardcoded. Processes become exponential when deterministic workflow rules are blended with generative AI understanding.
+          </p>
+        </div>
+
+        <div class="ai-usecases-grid">
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-icon-bubble">📄</div>
+              <h3>AI Document Processing</h3>
+            </div>
+            <p class="ai-card-desc">
+              Transform unstructured PDFs, scanned receipts, contracts, and vendor invoices into verified structured database rows automatically.
+            </p>
+            <div class="ai-flow-steps">
+              <div class="ai-step-item"><span class="step-badge">1</span><span>Unstructured PDF Uploaded</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item highlight-step"><span class="step-badge">2</span><span>AI Vision & Text Extraction</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">3</span><span>Rule-Based Schema Validation</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">4</span><span>Sync to ERP / Accounting</span></div>
+            </div>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-icon-bubble">✉️</div>
+              <h3>Intelligent Email Processing</h3>
+            </div>
+            <p class="ai-card-desc">
+              Read, classify intent, extract order details or complaints, and trigger appropriate internal actions or draft contextual replies.
+            </p>
+            <div class="ai-flow-steps">
+              <div class="ai-step-item"><span class="step-badge">1</span><span>Inbound Client Email</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item highlight-step"><span class="step-badge">2</span><span>AI Intent & Sentiment Classifier</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">3</span><span>Contextual Routing & CRM Match</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">4</span><span>Auto-Draft or Dispatch Ticket</span></div>
+            </div>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-icon-bubble">🤖</div>
+              <h3>Internal AI Assistant (RAG)</h3>
+            </div>
+            <p class="ai-card-desc">
+              Empower employees to query proprietary documentation, policies, and CRM data via Slack or WhatsApp with grounded answers.
+            </p>
+            <div class="ai-flow-steps">
+              <div class="ai-step-item"><span class="step-badge">1</span><span>Employee Question on Slack</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item highlight-step"><span class="step-badge">2</span><span>RAG Vector Search on Docs</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">3</span><span>Grounded LLM Synthesis</span></div>
+              <div class="ai-step-arrow">↓</div>
+              <div class="ai-step-item"><span class="step-badge">4</span><span>Immediate Answer + Action Buttons</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 8. USE CASES SECTION -->
+    <!-- ============================================================ -->
+    <section id="use-cases" class="section usecases-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Departmental Applications</span>
+          <h2 class="section-title">What Can Be <span class="gradient-text">Automated?</span></h2>
+          <p class="section-subtitle">
+            Explore how modern automation unlocks efficiency across every major operational division.
+          </p>
+        </div>
+
+        <div class="usecase-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="sales" role="tab" aria-selected="true">Sales & Growth</button>
+          <button class="tab-btn" data-tab="service" role="tab" aria-selected="false">Customer Support</button>
+          <button class="tab-btn" data-tab="finance" role="tab" aria-selected="false">Finance & Invoicing</button>
+          <button class="tab-btn" data-tab="hr" role="tab" aria-selected="false">HR & Onboarding</button>
+          <button class="tab-btn" data-tab="operations" role="tab" aria-selected="false">Operations</button>
+          <button class="tab-btn" data-tab="management" role="tab" aria-selected="false">Leadership & BI</button>
+        </div>
+
+        <div class="tab-content-wrapper">
+          <div class="tab-pane active" id="pane-sales">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">🎯</div>
+                <h3>Lead Capture & Enrichment</h3>
+                <p>Instantly pull incoming website form leads, enrich company info from external APIs, and create enriched CRM deals.</p>
+                <span class="usecase-impact">⚡ Sub-second response to hot prospects</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">📊</div>
+                <h3>Automated Lead Qualification</h3>
+                <p>Score leads based on budget and requirements, routing high-intent deals directly to senior account reps.</p>
+                <span class="usecase-impact">⚡ 40% higher sales conversion</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🔄</div>
+                <h3>Follow-Up Sequence Triggers</h3>
+                <p>Trigger personalized multi-channel follow-ups (Email/WhatsApp) based on prospect activity and contract view events.</p>
+                <span class="usecase-impact">⚡ Zero dropped opportunities</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-service">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">🎫</div>
+                <h3>Intelligent Ticket Triage</h3>
+                <p>Classify support tickets by urgency and category, tagging and assigning them to the right specialist immediately.</p>
+                <span class="usecase-impact">⚡ 80% reduction in initial wait time</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🤖</div>
+                <h3>Automated FAQ Resolution</h3>
+                <p>Deploy AI assistants that resolve standard order queries, return requests, and password resets 24/7.</p>
+                <span class="usecase-impact">⚡ Deflect 45% of tier-1 support</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🔔</div>
+                <h3>Proactive SLA Alerts</h3>
+                <p>Notify team leads before customer ticket response SLAs expire, ensuring 100% compliance with client agreements.</p>
+                <span class="usecase-impact">⚡ Highest customer satisfaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-finance">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">🧾</div>
+                <h3>Automated Invoice Processing</h3>
+                <p>Extract line items, tax IDs, and totals from PDF supplier invoices and automatically enter them into QuickBooks or SAP.</p>
+                <span class="usecase-impact">⚡ 90% faster AP processing</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">💳</div>
+                <h3>Payment Reconciliation</h3>
+                <p>Match Stripe / bank transactions with accounting ledgers, flagging discrepancies and overdue accounts automatically.</p>
+                <span class="usecase-impact">⚡ Zero reconciliation errors</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">📈</div>
+                <h3>Automated Cashflow Summaries</h3>
+                <p>Generate and dispatch consolidated financial health reports to founders and finance teams every Monday morning.</p>
+                <span class="usecase-impact">⚡ Instant fiscal clarity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-hr">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">👋</div>
+                <h3>Employee Onboarding Pipeline</h3>
+                <p>Generate contracts, create Google/Slack accounts, provision software seats, and schedule orientation calls with one click.</p>
+                <span class="usecase-impact">⚡ Seamless day-1 new hire experience</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">📑</div>
+                <h3>Document Collection & Verification</h3>
+                <p>Automatically follow up with candidates for IDs and tax forms, storing files securely in encrypted cloud directories.</p>
+                <span class="usecase-impact">⚡ 100% compliance & zero missing forms</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🌴</div>
+                <h3>Leave & Expense Approvals</h3>
+                <p>Route employee time-off and expense requests through Slack interactive buttons with automated manager approval flows.</p>
+                <span class="usecase-impact">⚡ Instant approvals in chat</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-operations">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">🔄</div>
+                <h3>Cross-Platform Data Sync</h3>
+                <p>Keep inventory, user accounts, and product catalogs synchronized across eCommerce, ERP, and regional warehouses.</p>
+                <span class="usecase-impact">⚡ Eliminate double-booking & overselling</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">⏱️</div>
+                <h3>Automated Scheduled Jobs</h3>
+                <p>Execute batch processing, database cleanups, audit checks, and report compilations automatically on reliable cron triggers.</p>
+                <span class="usecase-impact">⚡ High reliability backend ops</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🚨</div>
+                <h3>System Health & Uptime Watchdog</h3>
+                <p>Monitor critical APIs and database sync states, paging on-call engineers via SMS/WhatsApp whenever an anomaly is detected.</p>
+                <span class="usecase-impact">⚡ 99.9% operational continuity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-management">
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon">📊</div>
+                <h3>KPI & Executive Dashboards</h3>
+                <p>Consolidate cross-departmental KPIs into a single clean Slack or Notion dashboard delivered every morning at 8:00 AM.</p>
+                <span class="usecase-impact">⚡ Complete real-time business visibility</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">⚡</div>
+                <h3>Strategic Threshold Alerts</h3>
+                <p>Receive immediate notifications when critical metrics surge or dip (e.g. churn spike, high-value deal close, cash reserve limit).</p>
+                <span class="usecase-impact">⚡ Fast proactive executive interventions</span>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🧠</div>
+                <h3>AI Executive Summaries</h3>
+                <p>Have LLMs read weekly operational logs and output concise 3-bullet executive briefings highlighting bottlenecks.</p>
+                <span class="usecase-impact">⚡ Save 5+ hours of review each week</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 9. INDUSTRIES SECTION -->
+    <!-- ============================================================ -->
+    <section id="industries" class="section industries-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Industry Solutions</span>
+          <h2 class="section-title">Automation Across <span class="gradient-text">Industries</span></h2>
+          <p class="section-subtitle">
+            Tailored automation workflows engineered around the unique regulatory, operational, and data requirements of your sector.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <div class="industry-card">
+            <div class="industry-badge">Financial Services</div>
+            <h3 class="industry-name">Banking & Financial Services</h3>
+            <p class="industry-text">
+              Automate high-volume document workflows, compliance checks, client KYC ingestion, transaction notifications, and financial audit reporting with enterprise-grade data isolation.
+            </p>
+            <ul class="industry-bullets">
+              <li>KYC & Document Verification</li>
+              <li>Reconciliation Pipelines</li>
+              <li>Transaction Alerting</li>
+            </ul>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-badge">Commerce</div>
+            <h3 class="industry-name">Retail & E-Commerce</h3>
+            <p class="industry-text">
+              Automate omnichannel order management, multi-warehouse inventory syncing, supplier communications, abandoned cart recovery, and return authorizations.
+            </p>
+            <ul class="industry-bullets">
+              <li>Real-time Stock Synchronization</li>
+              <li>Fulfillment Webhook Routing</li>
+              <li>WhatsApp Order Tracking</li>
+            </ul>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-badge">Healthcare & Clinics</div>
+            <h3 class="industry-name">Healthcare Administration</h3>
+            <p class="industry-text">
+              Streamline administrative operations, patient appointment reminders, intake form processing, insurance pre-checks, and internal clinical notification workflows securely.
+            </p>
+            <ul class="industry-bullets">
+              <li>Patient Intake Form Automation</li>
+              <li>Appointment SMS/WhatsApp Flow</li>
+              <li>Staff Shift Notifications</li>
+            </ul>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-badge">Consulting & Legal</div>
+            <h3 class="industry-name">Professional Services</h3>
+            <p class="industry-text">
+              Accelerate client onboarding, proposal drafting, contract generation, time-tracking consolidation, and automated monthly reporting for agencies, legal, and accounting firms.
+            </p>
+            <ul class="industry-bullets">
+              <li>Client Onboarding Portals</li>
+              <li>Contract & NDA Generation</li>
+              <li>Automated Client Reporting</li>
+            </ul>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-badge">EdTech & Universities</div>
+            <h3 class="industry-name">Education & Training</h3>
+            <p class="industry-text">
+              Automate student application reviews, enrollment confirmations, certificate generation, attendance logging, and parent/student SMS notifications.
+            </p>
+            <ul class="industry-bullets">
+              <li>Student Enrollment Workflows</li>
+              <li>Automated Certificate PDFs</li>
+              <li>Grade & Schedule Alerts</li>
+            </ul>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-badge">Scale-ups & SMEs</div>
+            <h3 class="industry-name">Small & Medium Businesses</h3>
+            <p class="industry-text">
+              Replace costly manual labor with high-leverage automation that lets small teams punch above their weight, compete with enterprise players, and maintain lean overhead.
+            </p>
+            <ul class="industry-bullets">
+              <li>Lead-to-Invoice Pipelines</li>
+              <li>Customer Communication Hub</li>
+              <li>Hands-Free Operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 10. BEFORE / AFTER SECTION -->
+    <!-- ============================================================ -->
+    <section class="section before-after-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Transformation</span>
+          <h2 class="section-title">From Manual Chaos to <br><span class="gradient-text">Streamlined Operations</span></h2>
+          <p class="section-subtitle">
+            See the dramatic operational contrast between manual task execution and a FlowCraft automated architecture.
+          </p>
+        </div>
+
+        <div class="before-after-container">
+          <div class="comparison-column before-col">
+            <div class="comp-badge before-badge">❌ BEFORE FLOWCRAFT</div>
+            <h3 class="comp-title">Manual, Fragmented & Slow</h3>
+            <p class="comp-subtitle">8+ tedious human steps for every single transaction</p>
+            
+            <div class="comp-steps-list">
+              <div class="comp-step"><span class="step-num">1</span> Client sends request email</div>
+              <div class="comp-step"><span class="step-num">2</span> Employee opens email & reads details</div>
+              <div class="comp-step"><span class="step-num">3</span> Manually copy-pastes data into CRM</div>
+              <div class="comp-step"><span class="step-num">4</span> Opens ERP and creates customer record</div>
+              <div class="comp-step"><span class="step-num">5</span> Sends manual confirmation email</div>
+              <div class="comp-step"><span class="step-num">6</span> Updates tracking spreadsheet</div>
+              <div class="comp-step"><span class="step-num">7</span> Manually calculates totals for weekly report</div>
+              <div class="comp-step"><span class="step-num">8</span> Errors fixed after customer complains</div>
+            </div>
+
+            <div class="comp-stats before-stats">
+              <div>⏱️ <strong>Time:</strong> ~45 mins per request</div>
+              <div>⚠️ <strong>Error Risk:</strong> High (12-18%)</div>
+              <div>📉 <strong>Cost:</strong> Scales with employee count</div>
+            </div>
+          </div>
+
+          <div class="comparison-column after-col">
+            <div class="comp-badge after-badge">✨ AFTER FLOWCRAFT</div>
+            <h3 class="comp-title">Autonomous & Instant</h3>
+            <p class="comp-subtitle">One trigger orchestrates every downstream action</p>
+
+            <div class="comp-steps-list after-steps">
+              <div class="comp-step highlight-after"><span class="step-num">⚡</span> <strong>New Inbound Request Trigger</strong></div>
+              <div class="comp-wire">↓</div>
+              <div class="comp-step highlight-after"><span class="step-num">⚙️</span> <strong>FlowCraft Orchestration Engine</strong></div>
+              <div class="comp-wire">↓</div>
+              <div class="comp-step-branches">
+                <div class="branch-node">CRM Auto-Updated</div>
+                <div class="branch-node">ERP Record Generated</div>
+                <div class="branch-node">AI Document Extraction</div>
+                <div class="branch-node">Instant WhatsApp / Email Sent</div>
+                <div class="branch-node">Live Dashboard KPI Updated</div>
+              </div>
+            </div>
+
+            <div class="comp-stats after-stats">
+              <div>⏱️ <strong>Time:</strong> &lt; 2 seconds execution</div>
+              <div>✅ <strong>Error Risk:</strong> 0% (Validated schema)</div>
+              <div>📈 <strong>Cost:</strong> Flat, scalable infrastructure</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="before-after-footer text-center">
+          <p class="footer-highlight"><strong>One single trigger. Multiple simultaneous automated actions.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 11. HOW IT WORKS -->
+    <!-- ============================================================ -->
+    <section id="how-it-works" class="section how-it-works-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Our Proven Methodology</span>
+          <h2 class="section-title">From Idea to <span class="gradient-text">Automation</span></h2>
+          <p class="section-subtitle">
+            A structured, risk-free 5-step engineering process designed to take your workflow from bottleneck to deployed perfection.
+          </p>
+        </div>
+
+        <div class="steps-timeline">
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-digit">01</span>
+              <div class="step-icon bg-cyan">🔍</div>
+            </div>
+            <h3 class="step-name">Discover</h3>
+            <p class="step-desc">
+              We conduct a deep discovery session to map your current business processes, existing software stack, data formats, and team touchpoints.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-digit">02</span>
+              <div class="step-icon bg-indigo">🔬</div>
+            </div>
+            <h3 class="step-name">Analyze</h3>
+            <p class="step-desc">
+              We identify repetitive friction points, calculate hours lost, surface failure modes, and prioritize the highest-ROI automation opportunities.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-digit">03</span>
+              <div class="step-icon bg-purple">📐</div>
+            </div>
+            <h3 class="step-name">Design</h3>
+            <p class="step-desc">
+              We architect the technical workflow blueprint: defining API payload contracts, database schemas, AI prompt models, and security requirements.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-digit">04</span>
+              <div class="step-icon bg-blue">🚀</div>
+            </div>
+            <h3 class="step-name">Build & Deploy</h3>
+            <p class="step-desc">
+              We build the workflows, conduct rigorous staging tests with real edge cases, handle credential security, and deploy seamlessly into production.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-digit">05</span>
+              <div class="step-icon bg-emerald">📈</div>
+            </div>
+            <h3 class="step-name">Monitor & Improve</h3>
+            <p class="step-desc">
+              We provide continuous monitoring, execution logging, failure alerts, and ongoing optimizations as your business processes expand.
+            </p>
+          </div>
+        </div>
+
+        <div class="methodology-visual text-center">
+          <div class="methodology-pills">
+            <span>DISCOVER</span> → <span>ANALYZE</span> → <span>DESIGN</span> → <span>BUILD</span> → <span>DEPLOY</span> → <span>OPTIMIZE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 12. CUSTOM AUTOMATION SECTION -->
+    <!-- ============================================================ -->
+    <section id="about" class="section custom-section">
+      <div class="container">
+        <div class="custom-card-wrapper">
+          <div class="section-header text-center">
+            <span class="section-eyebrow">Bespoke Engineering</span>
+            <h2 class="section-title">Every Business Is Different. <br><span class="gradient-text">Your Automation Should Be Too.</span></h2>
+            <p class="section-subtitle">
+              We don’t believe in forcing businesses into rigid, predefined SaaS boxes. We analyze your existing workflows and build custom automation around the way your organization actually operates.
+            </p>
+          </div>
+
+          <div class="custom-pillars-grid">
+            <div class="custom-pillar">
+              <div class="custom-icon">💻</div>
+              <h3>Your Systems</h3>
+              <p>We work directly with your existing technology stack. No need to migrate databases or adopt unneeded platforms.</p>
+            </div>
+            <div class="custom-pillar">
+              <div class="custom-icon">⚙️</div>
+              <h3>Your Processes</h3>
+              <p>We automate your actual standard operating procedures down to the specific business rules, edge cases, and nuances.</p>
+            </div>
+            <div class="custom-pillar">
+              <div class="custom-icon">🛡️</div>
+              <h3>Your Requirements</h3>
+              <p>We engineer around your organization’s exact security, data residency, privacy, and compliance constraints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 13. INTEGRATIONS SECTION -->
+    <!-- ============================================================ -->
+    <section class="section integrations-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Ecosystem Compatibility</span>
+          <h2 class="section-title">Connect the Tools You <span class="gradient-text">Already Use</span></h2>
+          <p class="section-subtitle">
+            FlowCraft seamlessly unifies hundreds of modern applications, legacy databases, and enterprise platforms.
+          </p>
+        </div>
+
+        <div class="integration-controls">
+          <div class="int-category-filters" role="tablist">
+            <button class="int-filter-btn active" data-category="all">All Tools</button>
+            <button class="int-filter-btn" data-category="crm">CRM & Sales</button>
+            <button class="int-filter-btn" data-category="comm">Communication</button>
+            <button class="int-filter-btn" data-category="db">Databases</button>
+            <button class="int-filter-btn" data-category="cloud">Cloud & Infra</button>
+            <button class="int-filter-btn" data-category="ai">AI & Models</button>
+          </div>
+          <div class="int-search-box">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+            <input type="text" id="int-search-input" placeholder="Search 50+ integrations..." aria-label="Search integrations">
+          </div>
+        </div>
+
+        <div class="integrations-grid" id="integrations-grid">
+          <!-- CRM -->
+          <div class="int-card" data-cat="crm" data-name="Salesforce">
+            <div class="int-logo-circle">☁️</div>
+            <div class="int-name">Salesforce</div>
+            <span class="int-type">CRM & Sales</span>
+          </div>
+          <div class="int-card" data-cat="crm" data-name="HubSpot">
+            <div class="int-logo-circle">🟠</div>
+            <div class="int-name">HubSpot</div>
+            <span class="int-type">Inbound & CRM</span>
+          </div>
+          <div class="int-card" data-cat="crm" data-name="Pipedrive">
+            <div class="int-logo-circle">🟢</div>
+            <div class="int-name">Pipedrive</div>
+            <span class="int-type">Pipeline CRM</span>
+          </div>
+          <div class="int-card" data-cat="crm" data-name="Zoho CRM">
+            <div class="int-logo-circle">🔴</div>
+            <div class="int-name">Zoho Suite</div>
+            <span class="int-type">Enterprise CRM</span>
+          </div>
+
+          <!-- Communication -->
+          <div class="int-card" data-cat="comm" data-name="Slack">
+            <div class="int-logo-circle">💬</div>
+            <div class="int-name">Slack</div>
+            <span class="int-type">Team Messaging</span>
+          </div>
+          <div class="int-card" data-cat="comm" data-name="WhatsApp">
+            <div class="int-logo-circle">🟢</div>
+            <div class="int-name">WhatsApp API</div>
+            <span class="int-type">Direct Messaging</span>
+          </div>
+          <div class="int-card" data-cat="comm" data-name="Gmail & Google Workspace">
+            <div class="int-logo-circle">✉️</div>
+            <div class="int-name">Google Workspace</div>
+            <span class="int-type">Email & Calendar</span>
+          </div>
+          <div class="int-card" data-cat="comm" data-name="Microsoft 365">
+            <div class="int-logo-circle">🟦</div>
+            <div class="int-name">Microsoft 365</div>
+            <span class="int-type">Outlook & Teams</span>
+          </div>
+
+          <!-- Databases -->
+          <div class="int-card" data-cat="db" data-name="PostgreSQL">
+            <div class="int-logo-circle">🐘</div>
+            <div class="int-name">PostgreSQL</div>
+            <span class="int-type">Relational DB</span>
+          </div>
+          <div class="int-card" data-cat="db" data-name="MySQL">
+            <div class="int-logo-circle">🐬</div>
+            <div class="int-name">MySQL / MariaDB</div>
+            <span class="int-type">Relational DB</span>
+          </div>
+          <div class="int-card" data-cat="db" data-name="MongoDB">
+            <div class="int-logo-circle">🍃</div>
+            <div class="int-name">MongoDB</div>
+            <span class="int-type">Document DB</span>
+          </div>
+          <div class="int-card" data-cat="db" data-name="Oracle & SQL Server">
+            <div class="int-logo-circle">🗄️</div>
+            <div class="int-name">Oracle DB</div>
+            <span class="int-type">Enterprise SQL</span>
+          </div>
+
+          <!-- Cloud -->
+          <div class="int-card" data-cat="cloud" data-name="AWS">
+            <div class="int-logo-circle">🟧</div>
+            <div class="int-name">Amazon AWS</div>
+            <span class="int-type">S3 / Lambda / RDS</span>
+          </div>
+          <div class="int-card" data-cat="cloud" data-name="Google Cloud">
+            <div class="int-logo-circle">🔵</div>
+            <div class="int-name">Google Cloud</div>
+            <span class="int-type">BigQuery / GCP</span>
+          </div>
+          <div class="int-card" data-cat="cloud" data-name="Microsoft Azure">
+            <div class="int-logo-circle">🔷</div>
+            <div class="int-name">Microsoft Azure</div>
+            <span class="int-type">Cloud Services</span>
+          </div>
+          <div class="int-card" data-cat="cloud" data-name="Stripe & Quickbooks">
+            <div class="int-logo-circle">💳</div>
+            <div class="int-name">Stripe & Billing</div>
+            <span class="int-type">Payments & ERP</span>
+          </div>
+
+          <!-- AI -->
+          <div class="int-card" data-cat="ai" data-name="OpenAI GPT">
+            <div class="int-logo-circle">🧠</div>
+            <div class="int-name">OpenAI GPT-4o</div>
+            <span class="int-type">LLM & Vision</span>
+          </div>
+          <div class="int-card" data-cat="ai" data-name="Anthropic Claude">
+            <div class="int-logo-circle">✨</div>
+            <div class="int-name">Anthropic Claude</div>
+            <span class="int-type">Long-Context AI</span>
+          </div>
+          <div class="int-card" data-cat="ai" data-name="Google Gemini">
+            <div class="int-logo-circle">💎</div>
+            <div class="int-name">Google Gemini</div>
+            <span class="int-type">Multimodal AI</span>
+          </div>
+          <div class="int-card" data-cat="ai" data-name="AWS Bedrock & Ollama">
+            <div class="int-logo-circle">🦙</div>
+            <div class="int-name">Private / Local LLMs</div>
+            <span class="int-type">Self-Hosted AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 14. SECURITY & RELIABILITY -->
+    <!-- ============================================================ -->
+    <section class="section security-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Enterprise Trust</span>
+          <h2 class="section-title">Automation Built With <br><span class="gradient-text">Security in Mind</span></h2>
+          <p class="section-subtitle">
+            Enterprise integrations demand strict data sovereignty, secret isolation, and non-negotiable uptime.
+          </p>
+        </div>
+
+        <div class="security-grid">
+          <div class="security-card">
+            <div class="sec-icon">🔐</div>
+            <h3>Secure Integrations</h3>
+            <p>API credentials, OAuth tokens, and secrets are encrypted with industry-standard key vaults and never hardcoded in plaintext.</p>
+          </div>
+          <div class="security-card">
+            <div class="sec-icon">🛡️</div>
+            <h3>Data Protection</h3>
+            <p>Workflows are designed strictly around your organization’s data-handling policies and minimal data exposure principles.</p>
+          </div>
+          <div class="security-card">
+            <div class="sec-icon">👥</div>
+            <h3>Granular Access Control</h3>
+            <p>Implement role-based access control (RBAC) ensuring only authorized personnel can inspect or trigger production workflows.</p>
+          </div>
+          <div class="security-card">
+            <div class="sec-icon">📊</div>
+            <h3>Full Execution Audits</h3>
+            <p>Every workflow execution is timestamped and logged with error tracing and alerting, giving you complete accountability.</p>
+          </div>
+          <div class="security-card">
+            <div class="sec-icon">🏢</div>
+            <h3>Self-Hosted Infrastructure</h3>
+            <p>Deploy your automation cluster inside your private VPC (AWS, Azure, GCP, or On-Prem) so sensitive data never leaves your perimeter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 15. AUTOMATION EXAMPLES -->
+    <!-- ============================================================ -->
+    <section class="section examples-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Proof of Impact</span>
+          <h2 class="section-title">Automation <span class="gradient-text">Examples</span></h2>
+          <p class="section-subtitle">
+            Realistic workflow architectures illustrating how businesses transition from manual overhead to automated precision.
+          </p>
+        </div>
+
+        <div class="examples-grid">
+          <div class="example-card">
+            <div class="example-card-header">
+              <span class="example-badge">Client Onboarding Workflow</span>
+              <h3>Automated Customer Onboarding</h3>
+            </div>
+            <div class="example-meta-block">
+              <div class="meta-label">Before Automation:</div>
+              <p class="meta-desc">Account managers spent 3 hours per client manually gathering docs, copying info to CRM, generating contract PDFs, and creating workspace folders.</p>
+            </div>
+            <div class="example-workflow-chain">
+              <span class="chain-node">Web Intake Form</span> → 
+              <span class="chain-node">Schema Validation</span> → 
+              <span class="chain-node">HubSpot CRM Sync</span> → 
+              <span class="chain-node">Contract PDF Generated</span> → 
+              <span class="chain-node">Slack & Email Alerts</span>
+            </div>
+            <div class="example-result-box">
+              <strong>Measurable Result:</strong>
+              <p>Onboarding turnaround dropped from 48 hours to under 3 minutes with zero data re-entry errors.</p>
+            </div>
+          </div>
+
+          <div class="example-card">
+            <div class="example-card-header">
+              <span class="example-badge">Accounts Payable Workflow</span>
+              <h3>End-to-End Invoice Processing</h3>
+            </div>
+            <div class="example-meta-block">
+              <div class="meta-label">Before Automation:</div>
+              <p class="meta-desc">Finance team manually opened hundreds of supplier invoice emails, typed line items into accounting software, and matched receipts manually.</p>
+            </div>
+            <div class="example-workflow-chain">
+              <span class="chain-node">PDF Inbound Email</span> → 
+              <span class="chain-node">AI OCR Extraction</span> → 
+              <span class="chain-node">PO Match Verification</span> → 
+              <span class="chain-node">ERP Ledger Entry</span> → 
+              <span class="chain-node">Manager Approval Ping</span>
+            </div>
+            <div class="example-result-box">
+              <strong>Measurable Result:</strong>
+              <p>Eliminated 85% of manual bookkeeping hours and reduced invoice payment turnaround by 4 days.</p>
+            </div>
+          </div>
+
+          <div class="example-card">
+            <div class="example-card-header">
+              <span class="example-badge">Lead Routing Workflow</span>
+              <h3>Real-Time Inbound Triage & Sync</h3>
+            </div>
+            <div class="example-meta-block">
+              <div class="meta-label">Before Automation:</div>
+              <p class="meta-desc">Leads sat in form backends for 6-12 hours until a coordinator manually exported CSVs and distributed assignments to sales representatives.</p>
+            </div>
+            <div class="example-workflow-chain">
+              <span class="chain-node">Inbound Lead Event</span> → 
+              <span class="chain-node">Clearbit Enrichment</span> → 
+              <span class="chain-node">Round-Robin Assignment</span> → 
+              <span class="chain-node">WhatsApp Notification</span> → 
+              <span class="chain-node">Calendar Booking Link</span>
+            </div>
+            <div class="example-result-box">
+              <strong>Measurable Result:</strong>
+              <p>Average lead response time fell from 6 hours to 45 seconds, boosting qualified discovery calls by 38%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 16. METRICS & ROI ESTIMATOR -->
+    <!-- ============================================================ -->
+    <section class="section metrics-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Quantifiable Value</span>
+          <h2 class="section-title">The Value of <span class="gradient-text">Eliminating Manual Work</span></h2>
+          <p class="section-subtitle">
+            Proven process benchmarks and an interactive calculator to estimate your organization's potential annual savings.
+          </p>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-big-number">70%</div>
+            <div class="metric-title">Less Manual Work</div>
+            <p class="metric-text">Eliminate repetitive copy-paste, data entry, and manual system cross-checks.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-big-number">3x</div>
+            <div class="metric-title">Faster Processing</div>
+            <p class="metric-text">Turn hours-long back-and-forth approval tasks into sub-minute executions.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-big-number">90%</div>
+            <div class="metric-title">Fewer Data Errors</div>
+            <p class="metric-text">Schema validation prevents lost documents, typos, and mismatched records.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-big-number">24/7</div>
+            <div class="metric-title">Continuous Operation</div>
+            <p class="metric-text">Your workflows process requests, sync records, and alert teams round the clock.</p>
+          </div>
+        </div>
+
+        <div class="calculator-box">
+          <div class="calculator-header">
+            <h3>🧮 Interactive Automation Savings Estimator</h3>
+            <p>Calculate how much time and budget your business can reclaim with custom automation.</p>
+          </div>
+
+          <div class="calc-grid">
+            <div class="calc-controls">
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Team members doing repetitive tasks:</span>
+                  <strong id="calc-team-val">5 people</strong>
+                </div>
+                <input type="range" id="slider-team" min="1" max="50" value="5" class="calc-slider">
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Hours spent on manual work per week (per person):</span>
+                  <strong id="calc-hours-val">10 hrs/week</strong>
+                </div>
+                <input type="range" id="slider-hours" min="2" max="30" value="10" class="calc-slider">
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Average hourly labor cost:</span>
+                  <strong id="calc-cost-val">$35 / hr</strong>
+                </div>
+                <input type="range" id="slider-cost" min="15" max="150" step="5" value="35" class="calc-slider">
+              </div>
+            </div>
+
+            <div class="calc-results-panel">
+              <div class="res-item">
+                <span class="res-label">Annual Hours Reclaimed:</span>
+                <strong class="res-number" id="res-hours">2,600 hrs</strong>
+              </div>
+              <div class="res-item highlight">
+                <span class="res-label">Estimated Annual Labor Savings:</span>
+                <strong class="res-number-big" id="res-dollars">$91,000</strong>
+              </div>
+              <div class="res-item">
+                <span class="res-label">Estimated ROI Factor:</span>
+                <strong class="res-number text-emerald" id="res-roi">8.4x</strong>
+              </div>
+              <button class="btn btn-primary w-full mt-3" onclick="openConsultationModal()">Claim These Savings Today</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 17. PRICING SECTION -->
+    <!-- ============================================================ -->
+    <section id="pricing" class="section pricing-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Engagement Models</span>
+          <h2 class="section-title">Every Automation Is Different. <br><span class="gradient-text">Transparent, Value-Based Scopes.</span></h2>
+          <p class="section-subtitle">
+            We partner with businesses at every stage of their automation maturity — from single workflow sprints to enterprise transformations.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-badge">Quick Win</div>
+            <h3 class="tier-name">Automation Starter</h3>
+            <p class="tier-desc">Ideal for targeted bottlenecks in small teams and single department workflows.</p>
+            <div class="tier-price">Custom Scope</div>
+            <ul class="tier-features">
+              <li>✓ <strong>1 to 3 Custom Workflows</strong></li>
+              <li>✓ Basic 2-3 System Integrations (e.g. CRM + Email + DB)</li>
+              <li>✓ Full Error Handling & Retry Logic</li>
+              <li>✓ Staging & Production Deployment</li>
+              <li>✓ Technical Handover & Documentation</li>
+              <li>✓ 14 Days Post-Launch Support</li>
+            </ul>
+            <button class="btn btn-secondary w-full" onclick="openQuoteModal('Automation Starter')">Request a Quote</button>
+          </div>
+
+          <div class="pricing-card featured-tier">
+            <div class="popular-ribbon">MOST POPULAR</div>
+            <div class="pricing-badge">End-to-End</div>
+            <h3 class="tier-name">Business Automation</h3>
+            <p class="tier-desc">Designed for scaling SMEs looking to eliminate multi-department manual bottlenecks.</p>
+            <div class="tier-price">Custom Scope</div>
+            <ul class="tier-features">
+              <li>✓ <strong>Multiple Interconnected Workflows</strong></li>
+              <li>✓ Advanced Multi-System Integrations</li>
+              <li>✓ <strong>AI Document Extraction & Classification</strong></li>
+              <li>✓ Webhook & API Bridge Infrastructure</li>
+              <li>✓ Real-Time WhatsApp / Slack Alerting</li>
+              <li>✓ Custom KPI Digest & Reports</li>
+              <li>✓ 30 Days Post-Launch Support & Monitoring</li>
+            </ul>
+            <button class="btn btn-primary w-full" onclick="openQuoteModal('Business Automation')">Request a Quote</button>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-badge">Full Scale</div>
+            <h3 class="tier-name">Enterprise Automation</h3>
+            <p class="tier-desc">For organizations with stringent security, high transaction volumes, and custom infrastructure.</p>
+            <div class="tier-price">Tailored SLA</div>
+            <ul class="tier-features">
+              <li>✓ <strong>Complete Enterprise Workflow Architecture</strong></li>
+              <li>✓ Private Self-Hosted Deployment (VPC / On-Prem)</li>
+              <li>✓ Custom AI Models & RAG Internal Assistants</li>
+              <li>✓ Legacy ERP / Core Database Synchronization</li>
+              <li>✓ Strict RBAC, SOC2-aligned Best Practices</li>
+              <li>✓ Dedicated SLA & Continuous Retainer Maintenance</li>
+            </ul>
+            <button class="btn btn-secondary w-full" onclick="openQuoteModal('Enterprise Automation')">Talk to Our Team</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 18. FREE AUTOMATION ASSESSMENT -->
+    <!-- ============================================================ -->
+    <section class="section assessment-section" id="assessment">
+      <div class="container">
+        <div class="assessment-wrapper">
+          <div class="assessment-info">
+            <div class="badge badge-glow">
+              <span>Zero Risk • 100% Actionable</span>
+            </div>
+            <h2 class="section-title">Not Sure What You <br><span class="gradient-text">Should Automate?</span></h2>
+            <p class="assessment-desc">
+              Tell us how your team currently works. Our senior automation engineers will analyze your operational bottlenecks and provide a <strong>custom automation roadmap</strong> detailing expected time saved and integration feasibility.
+            </p>
+
+            <div class="assessment-perks">
+              <div class="perk-item">
+                <span class="perk-icon">🎯</span>
+                <div>
+                  <strong>Clear Bottleneck Breakdown</strong>
+                  <p>Identify which manual tasks cost you the most hours.</p>
+                </div>
+              </div>
+              <div class="perk-item">
+                <span class="perk-icon">📐</span>
+                <div>
+                  <strong>Technical Architecture Blueprint</strong>
+                  <p>Understand how your tools will connect together.</p>
+                </div>
+              </div>
+              <div class="perk-item">
+                <span class="perk-icon">💰</span>
+                <div>
+                  <strong>ROI & Scope Estimation</strong>
+                  <p>Get clear cost vs savings forecasts before writing code.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="assessment-form-card">
+            <h3 class="form-title">Free Automation Assessment</h3>
+            <p class="form-subtitle">Fill out the quick details below for an engineering review.</p>
+
+            <form id="assessment-form" onsubmit="handleAssessmentSubmit(event)">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="as-name">Your Name *</label>
+                  <input type="text" id="as-name" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                  <label for="as-company">Company Name *</label>
+                  <input type="text" id="as-company" required placeholder="Acme Logistics">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="as-email">Business Email *</label>
+                  <input type="email" id="as-email" required placeholder="jane@acme.com">
+                </div>
+                <div class="form-group">
+                  <label for="as-phone">Phone / WhatsApp</label>
+                  <input type="text" id="as-phone" placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="as-industry">Industry</label>
+                <select id="as-industry">
+                  <option value="finance">Banking & Financial Services</option>
+                  <option value="ecommerce">Retail & E-Commerce</option>
+                  <option value="healthcare">Healthcare Administration</option>
+                  <option value="professional">Professional Services / Agency</option>
+                  <option value="education">Education & EdTech</option>
+                  <option value="smb">Small & Medium Business</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="as-process">What process would you like to automate? *</label>
+                <textarea id="as-process" rows="3" required placeholder="e.g. Invoicing emails from suppliers need to be extracted and synced to QuickBooks and our CRM..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="as-systems">What systems do you currently use?</label>
+                <input type="text" id="as-systems" placeholder="e.g. HubSpot, QuickBooks, Slack, PostgreSQL, Excel">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="as-people">How many people perform this process?</label>
+                  <select id="as-people">
+                    <option value="1-2">1 – 2 employees</option>
+                    <option value="3-5">3 – 5 employees</option>
+                    <option value="6-10">6 – 10 employees</option>
+                    <option value="10+">10+ employees</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="as-frequency">How frequently does it happen?</label>
+                  <select id="as-frequency">
+                    <option value="daily">Continuously / Daily</option>
+                    <option value="weekly">Multiple times per week</option>
+                    <option value="monthly">End of month batch</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full btn-lg">
+                <span>Submit for Free Assessment</span>
+                <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 19. FAQ SECTION -->
+    <!-- ============================================================ -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Clear Answers</span>
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <p class="section-subtitle">
+            Everything you need to know about partnering with FlowCraft for business process automation.
+          </p>
+        </div>
+
+        <div class="faq-accordion-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is business process automation?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Business process automation uses specialized software workflows, APIs, and business logic to execute repetitive, time-consuming business tasks with minimal or zero manual human intervention. This includes automated data movement, approval routing, document generation, and cross-platform synchronization.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you only work with n8n?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use n8n as our primary workflow engine because of its enterprise reliability, visual transparency, and self-hosting capabilities. However, our focus is the business outcome and the overall automation architecture. We frequently write custom Python microservices, TypeScript API adapters, SQL procedures, and integrate external AI/LLM models alongside n8n.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can you integrate our existing systems?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, absolutely. We design workflows around the tools you already rely on — including CRMs (HubSpot, Salesforce), ERPs, SQL/NoSQL databases, cloud buckets (AWS S3, Google Cloud), email providers, WhatsApp, custom webhooks, and internal legacy on-premise databases.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can you add AI to our workflows?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We integrate modern LLMs (OpenAI, Anthropic Claude, Gemini, or private local models) directly into workflow pipelines for tasks such as PDF entity extraction, unstructured email classification, contextual sentiment routing, content generation, and internal RAG knowledge bases.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can the automation infrastructure be self-hosted?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Depending on your data privacy and compliance requirements, we can deploy and configure your entire automation cluster inside your own private cloud (AWS, Azure, GCP) or on-premise hardware so your business data never touches third-party SaaS servers.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you provide maintenance and ongoing support?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We offer continuous monitoring retainers that include 24/7 uptime watchdog tracking, automatic failure alerts, API version updates, workflow enhancements, and regular performance optimizations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 20. FINAL CTA -->
+    <!-- ============================================================ -->
+    <section class="section final-cta-section">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="cta-glow-bg" aria-hidden="true"></div>
+          <div class="cta-content">
+            <div class="badge badge-glow">
+              <span>Transform Your Operations</span>
+            </div>
+            <h2 class="final-cta-title">Ready to Automate <br><span class="gradient-text">Your Business?</span></h2>
+            <p class="final-cta-text">
+              Tell us about your current processes and we’ll help you identify where custom automation can make the biggest operational difference.
+            </p>
+            <div class="final-cta-buttons">
+              <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+                <span>Book a Free Consultation</span>
+                <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <a href="#assessment" class="btn btn-secondary btn-lg">
+                <span>Start an Automation Assessment</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 21. CONTACT SECTION -->
+    <!-- ============================================================ -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-eyebrow">Get in Touch</span>
+            <h2 class="section-title">Let’s Discuss Your <br><span class="gradient-text">Automation Goals</span></h2>
+            <p class="contact-desc">
+              Have a specific integration challenge or want to explore how custom automation can cut your operational overhead? Reach out directly or book directly on Google Calendar.
+            </p>
+
+            <div class="contact-channels">
+              <div class="channel-card">
+                <div class="channel-icon">📅</div>
+                <div>
+                  <span class="channel-label">Direct Calendar Booking</span>
+                  <a href="#" onclick="openConsultationModal('Contact Page Booking'); return false;" class="channel-link">Schedule on Google Calendar →</a>
+                </div>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon">📧</div>
+                <div>
+                  <span class="channel-label">Email Us</span>
+                  <a href="mailto:AmjadKhaliliah1998@gmail.com" class="channel-link">AmjadKhaliliah1998@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon">💬</div>
+                <div>
+                  <span class="channel-label">WhatsApp Quick Chat</span>
+                  <a href="https://wa.me/970595457008?text=Hello%20Amjad%2C%20I%20am%20interested%20in%20FlowCraft%20custom%20automation%20and%20AI%20services." target="_blank" rel="noopener" class="channel-link">+970 595 457 008 (Chat Now ↗)</a>
+                </div>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon">📍</div>
+                <div>
+                  <span class="channel-label">Headquarters</span>
+                  <p class="channel-text">Palestine | Remote Worldwide</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="contact-form-title">Send a Project Request</h3>
+            
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="ct-name">Full Name *</label>
+                  <input type="text" id="ct-name" required placeholder="Alex Rivera">
+                </div>
+                <div class="form-group">
+                  <label for="ct-company">Company *</label>
+                  <input type="text" id="ct-company" required placeholder="Rivera Global">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="ct-email">Business Email *</label>
+                  <input type="email" id="ct-email" required placeholder="alex@rivera.com">
+                </div>
+                <div class="form-group">
+                  <label for="ct-phone">Phone / WhatsApp</label>
+                  <input type="text" id="ct-phone" placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ct-industry">Industry</label>
+                <select id="ct-industry">
+                  <option value="finance">Banking & Financial Services</option>
+                  <option value="ecommerce">Retail & E-Commerce</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="professional">Professional Services</option>
+                  <option value="education">Education</option>
+                  <option value="smb">Small & Medium Business</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="ct-details">What would you like to automate? *</label>
+                <textarea id="ct-details" rows="4" required placeholder="Describe your current bottleneck, tools used, and target outcome..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full btn-lg">
+                <span>Send Request</span>
+                <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 22. FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col-brand">
+          <a href="#hero" class="logo-link">
+            <div class="logo-icon">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="8" cy="16" r="3.5" class="logo-node node-1" />
+                <circle cx="24" cy="9" r="3.5" class="logo-node node-2" />
+                <circle cx="24" cy="23" r="3.5" class="logo-node node-3" />
+                <path d="M8 16L24 9" class="logo-wire wire-1" stroke-width="2.2"/>
+                <path d="M8 16L24 23" class="logo-wire wire-2" stroke-width="2.2"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="brand-title">FlowCraft</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Business Process Automation & AI Integration. Designing custom workflows that eliminate repetitive work, connect systems, and scale operations.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66c0-.92-.74-1.66-1.66-1.66Z"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="executive.html" style="color: var(--gold-ceo);">Executive Leadership Hub</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Business Process Automation</a></li>
+            <li><a href="#services">AI Automation & LLMs</a></li>
+            <li><a href="#services">System & API Integration</a></li>
+            <li><a href="#services">Document Intelligence</a></li>
+            <li><a href="#services">Reporting & Dashboards</a></li>
+            <li><a href="#assessment">Free Automation Assessment</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Location / Contact -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Consultancy & Contact</h4>
+          <p class="footer-subtext">Palestine | Remote Worldwide</p>
+          <p class="footer-subtext">Email: <a href="mailto:AmjadKhaliliah1998@gmail.com" class="text-cyan">AmjadKhaliliah1998@gmail.com</a></p>
+          <p class="footer-subtext">WhatsApp: <a href="https://wa.me/970595457008" target="_blank" class="text-emerald">+970 595 457 008</a></p>
+          <div class="footer-status-pill">
+            <span class="status-dot"></span> Google Calendar Sync Active
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-copy">
+          © 2026 FlowCraft. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" onclick="alert('FlowCraft Privacy Policy: We hold client confidentiality and data security to the highest enterprise standards. We never monetize or sell client data.'); return false;">Privacy Policy</a>
+          <a href="#" onclick="alert('FlowCraft Terms of Service: All custom workflow projects are governed by custom SOW and MSA agreements.'); return false;">Terms of Service</a>
+          <a href="#main-header" class="back-to-top" aria-label="Back to top">↑ Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- MODAL: BOOK A CONSULTATION / GOOGLE CALENDAR SYNC -->
+  <!-- ============================================================ -->
+  <div id="consultation-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" onclick="closeConsultationModal()" aria-label="Close modal">✕</button>
+      
+      <div class="modal-header">
+        <div class="badge badge-glow"><span>📅 Google Calendar Sync</span></div>
+        <h3 id="modal-title" class="modal-title">Book a Free Consultation</h3>
+        <p class="modal-sub">Schedule a 30-minute discovery session with our senior automation architects.</p>
+      </div>
+
+      <form id="consultation-form" onsubmit="handleConsultationSubmit(event)">
+        <input type="hidden" id="modal-package-name" value="General Consultation">
+        
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="m-name">Full Name *</label>
+            <input type="text" id="m-name" required placeholder="Alex Rivera">
+          </div>
+          <div class="form-group">
+            <label for="m-company">Company Name *</label>
+            <input type="text" id="m-company" required placeholder="Rivera Global">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="m-email">Business Email *</label>
+            <input type="email" id="m-email" required placeholder="alex@company.com">
+          </div>
+          <div class="form-group">
+            <label for="m-phone">Phone / WhatsApp</label>
+            <input type="text" id="m-phone" placeholder="+1 (555) 000-0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="m-topic">Primary Automation Goal</label>
+          <select id="m-topic">
+            <option value="general">Comprehensive Workflow Review</option>
+            <option value="doc">Document & Invoice Processing (OCR/AI)</option>
+            <option value="crm">CRM & Sales Integration</option>
+            <option value="rag">Internal AI Assistant / Knowledge Base</option>
+            <option value="starter">Automation Starter Package</option>
+            <option value="business">Business Automation Package</option>
+            <option value="enterprise">Enterprise Custom Architecture</option>
+            <option value="ceo">Executive Strategic Briefing</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="m-notes">Brief Overview of Your Current Bottleneck</label>
+          <textarea id="m-notes" rows="3" placeholder="Tell us what manual tasks your team is struggling with..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full btn-lg">
+          <span>Confirm & Sync with Google Calendar</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Element -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <div class="toast-icon">✅</div>
+    <div class="toast-content">
+      <strong id="toast-title">Request Received</strong>
+      <p id="toast-body">We will respond within 24 business hours.</p>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Action Button -->
+  <a href="https://wa.me/970595457008?text=Hello%20Amjad%2C%20I%20am%20interested%20in%20FlowCraft%20custom%20automation%20and%20AI%20services." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp (+970 595 457 008)">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.03C9.34 7.03 9.04 7.1 8.78 7.39C8.52 7.68 7.78 8.37 7.78 9.78C7.78 11.19 8.81 12.55 8.95 12.74C9.1 12.93 10.96 15.8 13.82 17.03C14.5 17.33 15.03 17.51 15.44 17.64C16.12 17.86 16.74 17.83 17.23 17.76C17.78 17.68 18.91 17.07 19.15 16.41C19.38 15.75 19.38 15.18 19.31 15.06C19.24 14.94 19.06 14.88 18.78 14.74C18.5 14.6 17.16 13.94 16.91 13.85C16.66 13.76 16.48 13.71 16.3 13.99C16.11 14.27 15.58 14.88 15.42 15.06C15.26 15.25 15.1 15.27 14.82 15.13C14.54 14.99 13.65 14.7 12.59 13.75C11.77 13.02 11.21 12.11 11.05 11.83C10.89 11.55 11.03 11.4 11.17 11.26C11.3 11.13 11.45 10.93 11.6 10.76C11.74 10.59 11.79 10.46 11.88 10.28C11.97 10.1 11.93 9.94 11.86 9.8C11.79 9.66 11.23 8.28 11 7.73C10.77 7.2 10.54 7.27 10.37 7.26C10.21 7.26 10.02 7.25 9.84 7.25C9.65 7.25 9.53 7.03 9.53 7.03Z"/></svg>
+    <span class="floating-whatsapp-tooltip">Chat with Amjad on WhatsApp</span>
+  </a>
+
+  <!-- Javascript -->
+  <script src="app.js"></script>
+</body>
+</html>
