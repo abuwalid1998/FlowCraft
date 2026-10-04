@@ -7,8 +7,8 @@
 ---
 
 ## 🚀 Live Demo & Deployment
-- **Main Website:** [https://abuwalid1998.github.io/FlowCraft/](https://abuwalid1998.github.io/FlowCraft/)
-- **Executive Leadership Hub (CEO, CTO, CMO):** [https://abuwalid1998.github.io/FlowCraft/executive.html](https://abuwalid1998.github.io/FlowCraft/executive.html)
+- **Main Website:** [https://abuwalid1998.github.io/Kinetiq/](https://abuwalid1998.github.io/Kinetiq/)
+- **Executive Leadership Hub (CEO, CTO, CMO):** [https://abuwalid1998.github.io/Kinetiq/executive.html](https://abuwalid1998.github.io/Kinetiq/executive.html)
 
 ---
 

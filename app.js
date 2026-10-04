@@ -577,13 +577,13 @@ function downloadIcsFile() {
   const icsData = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//FlowCraft//Executive Briefing//EN',
+    'PRODID:-//Kinetiq//Executive Briefing//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:REQUEST',
     'BEGIN:VEVENT',
-    `SUMMARY:FlowCraft Executive Strategy Briefing - ${bookingState.clientCompany || 'Consultation'}`,
-    `DESCRIPTION:Strategic Business Process Automation & AI Integration Call with FlowCraft.\\nGoogle Meet: ${GCAL_CONFIG.defaultMeetLink}`,
-    `ORGANIZER;CN=FlowCraft Architecture:MAILTO:${GCAL_CONFIG.accountEmail}`,
+    `SUMMARY:Kinetiq Executive Strategy Briefing - ${bookingState.clientCompany || 'Consultation'}`,
+    `DESCRIPTION:Strategic Business Process Automation & AI Integration Call with Kinetiq.\\nGoogle Meet: ${GCAL_CONFIG.defaultMeetLink}`,
+    `ORGANIZER;CN=Kinetiq Architecture:MAILTO:${GCAL_CONFIG.accountEmail}`,
     `LOCATION:Google Meet (${GCAL_CONFIG.defaultMeetLink})`,
     `STATUS:CONFIRMED`,
     'END:VEVENT',
@@ -593,7 +593,7 @@ function downloadIcsFile() {
   const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
   const link = document.createElement('a');
   link.href = window.URL.createObjectURL(blob);
-  link.setAttribute('download', 'FlowCraft_Executive_Briefing.ics');
+  link.setAttribute('download', 'Kinetiq_Executive_Briefing.ics');
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -619,7 +619,7 @@ async function forwardToWebhook(payload) {
         ...payload,
         submittedAt: new Date().toISOString(),
         recipient: GCAL_CONFIG.accountEmail,
-        source: 'FlowCraft Web Portal'
+        source: 'Kinetiq Web Portal'
       })
     });
   } catch (err) {
