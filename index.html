@@ -57,6 +57,7 @@
       <nav class="nav-menu" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#live-demo" class="nav-link"><span class="pulse-indicator-nav"></span> Live Demo</a></li>
           <li><a href="#solutions" class="nav-link">Solutions</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
@@ -87,6 +88,7 @@
     <div id="mobile-drawer" class="mobile-drawer">
       <nav class="mobile-nav">
         <a href="#hero" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+        <a href="#live-demo" class="mobile-nav-link" onclick="closeMobileMenu()" style="color: var(--cyan-primary);">⚡ Live Execution Sandbox</a>
         <a href="executive.html" class="mobile-nav-link" onclick="closeMobileMenu()" style="color: var(--gold-ceo);">👑 Executive Hub (CEO, CTO, CMO)</a>
         <a href="#solutions" class="mobile-nav-link" onclick="closeMobileMenu()">Solutions</a>
         <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
@@ -271,6 +273,457 @@
               <div class="metric-pill">
                 <span class="metric-val">0 Manual Steps</span>
                 <span class="metric-desc">Hands-Free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 2.5 INTERACTIVE LIVE WORKFLOW SANDBOX: PAYROLL & EXECUTION ENGINE -->
+    <!-- ============================================================ -->
+    <section id="live-demo" class="section live-demo-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="badge badge-glow">
+            <span class="badge-dot"></span>
+            <span>Interactive Live Execution Engine</span>
+          </div>
+          <h2 class="section-title">
+            See Real Business Workflows <br>
+            <span class="gradient-text">Execute Live in Real Time.</span>
+          </h2>
+          <p class="section-subtitle">
+            Experience our production-grade architecture. Watch attendance ingestion, automated gross-to-net tax calculations, AI anomaly checks, 1-click CEO approval, bank wire execution, and automated encrypted WhatsApp payslips in action.
+          </p>
+        </div>
+
+        <!-- Workflow Presets Switcher -->
+        <div class="demo-presets-nav" role="tablist">
+          <button class="preset-tab active" id="tab-preset-payroll" onclick="switchDemoPreset('payroll')">
+            <span class="preset-icon">💼</span>
+            <div class="preset-text">
+              <strong>Employee Payroll & Banking Execution</strong>
+              <span class="preset-sub">Attendance → Tax Calc → Wire API → WhatsApp Payslips</span>
+            </div>
+            <span class="preset-pill live-pill">LIVE RUNNER</span>
+          </button>
+
+          <button class="preset-tab" id="tab-preset-invoice" onclick="switchDemoPreset('invoice')">
+            <span class="preset-icon">📑</span>
+            <div class="preset-text">
+              <strong>Invoice & Document OCR Pipeline</strong>
+              <span class="preset-sub">PDF Ingestion → OCR Extract → 3-Way Match → ERP Sync</span>
+            </div>
+          </button>
+
+          <button class="preset-tab" id="tab-preset-crm" onclick="switchDemoPreset('crm')">
+            <span class="preset-icon">⚡</span>
+            <div class="preset-text">
+              <strong>Omnichannel Speed-to-Lead Routing</strong>
+              <span class="preset-sub">Form/Ad → AI Enrichment → Rep Assign → WhatsApp Intro</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Master Panoramic Live Canvas Container -->
+        <div class="demo-console-card">
+          <!-- Console Top Bar -->
+          <div class="console-header-bar">
+            <div class="console-window-dots">
+              <span class="console-dot red"></span>
+              <span class="console-dot yellow"></span>
+              <span class="console-dot green"></span>
+            </div>
+
+            <div class="console-engine-tag">
+              <span class="console-pulse"></span>
+              <strong id="demo-engine-name">FLOWCRAFT_PAYROLL_CORE_v5.4.0 (ACTIVE)</strong>
+            </div>
+
+            <!-- Control Buttons Toolbar -->
+            <div class="console-actions-toolbar">
+              <button class="btn-console-action btn-play" id="btn-run-full-sim" onclick="runLivePayrollDemo()">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M4 3v10l8-5-8-5z"/></svg>
+                <span id="btn-run-sim-text">▶ Run Live Simulation</span>
+              </button>
+              
+              <button class="btn-console-action btn-step" id="btn-step-sim" onclick="stepLivePayrollDemo()" title="Execute Next Stage">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M3 3v10l6-5-6-5zm7 0h2v10h-2V3z"/></svg>
+                <span>Step Forward</span>
+              </button>
+
+              <button class="btn-console-action btn-reset" onclick="resetLivePayrollDemo()" title="Reset Simulation State">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/></svg>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Real-Time Metrics Strip -->
+          <div class="console-metrics-ribbon">
+            <div class="c-metric">
+              <span class="c-metric-label">PIPELINE STAGE</span>
+              <strong class="c-metric-value text-cyan" id="metric-stage-name">1/6: Attendance Ingestion</strong>
+            </div>
+            <div class="c-metric">
+              <span class="c-metric-label">STATUS</span>
+              <strong class="c-metric-value text-emerald" id="metric-status-badge">⚡ Engine Standby</strong>
+            </div>
+            <div class="c-metric">
+              <span class="c-metric-label">EMPLOYEE ROSTER</span>
+              <strong class="c-metric-value" id="metric-employee-count">5 Selected / 42 Batch</strong>
+            </div>
+            <div class="c-metric">
+              <span class="c-metric-label">GROSS TOTAL</span>
+              <strong class="c-metric-value" id="metric-gross-total">$27,000.00</strong>
+            </div>
+            <div class="c-metric">
+              <span class="c-metric-label">NET DISPATCHED</span>
+              <strong class="c-metric-value text-gold" id="metric-net-total">$0.00</strong>
+            </div>
+            <div class="c-metric">
+              <span class="c-metric-label">LATENCY</span>
+              <strong class="c-metric-value text-cyan" id="metric-latency">290ms</strong>
+            </div>
+          </div>
+
+          <!-- Panoramic SVG Workflow Pipeline Canvas (6 Connected Stages) -->
+          <div class="panoramic-workflow-container">
+            <svg class="panoramic-svg-layer" viewBox="0 0 1140 180" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="panoWireGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00E5FF"/>
+                  <stop offset="50%" stop-color="#6366F1"/>
+                  <stop offset="100%" stop-color="#10B981"/>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Connection Wires between 6 stages -->
+              <path id="pano-wire-1" class="pano-wire" d="M 120 90 L 290 90" />
+              <path id="pano-wire-2" class="pano-wire" d="M 310 90 L 480 90" />
+              <path id="pano-wire-3" class="pano-wire" d="M 500 90 L 670 90" />
+              <path id="pano-wire-4" class="pano-wire" d="M 690 90 L 860 90" />
+              <path id="pano-wire-5" class="pano-wire" d="M 880 90 L 1040 90" />
+
+              <!-- Dynamic Animated Packets -->
+              <circle class="pano-packet" id="packet-stage-1" r="5" fill="#00E5FF"/>
+              <circle class="pano-packet" id="packet-stage-2" r="5" fill="#6366F1"/>
+              <circle class="pano-packet" id="packet-stage-3" r="5" fill="#A855F7"/>
+              <circle class="pano-packet" id="packet-stage-4" r="5" fill="#F59E0B"/>
+              <circle class="pano-packet" id="packet-stage-5" r="5" fill="#10B981"/>
+            </svg>
+
+            <!-- Stage 1 Node -->
+            <div class="stage-node active-stage" id="stage-node-1" onclick="jumpToStage(1)">
+              <div class="stage-number">01</div>
+              <div class="stage-icon-circle bg-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">INGESTION</span>
+                <strong class="stage-name">Time & Hours Sync</strong>
+                <span class="stage-detail">BambooHR / Clockify</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-1">Ready</div>
+            </div>
+
+            <!-- Stage 2 Node -->
+            <div class="stage-node" id="stage-node-2" onclick="jumpToStage(2)">
+              <div class="stage-number">02</div>
+              <div class="stage-icon-circle bg-indigo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">RULES ENGINE</span>
+                <strong class="stage-name">Gross-to-Net Math</strong>
+                <span class="stage-detail">Tax, OT 1.5x, Deductions</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-2">Queued</div>
+            </div>
+
+            <!-- Stage 3 Node -->
+            <div class="stage-node" id="stage-node-3" onclick="jumpToStage(3)">
+              <div class="stage-number">03</div>
+              <div class="stage-icon-circle bg-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">AI GUARD</span>
+                <strong class="stage-name">Anomaly & Fraud Check</strong>
+                <span class="stage-detail">IBAN & Outlier Filter</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-3">Queued</div>
+            </div>
+
+            <!-- Stage 4 Node -->
+            <div class="stage-node" id="stage-node-4" onclick="jumpToStage(4)">
+              <div class="stage-number">04</div>
+              <div class="stage-icon-circle bg-gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">GOVERNANCE</span>
+                <strong class="stage-name">1-Click Executive Sign</strong>
+                <span class="stage-detail">Telegram / Slack Webhook</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-4">Queued</div>
+            </div>
+
+            <!-- Stage 5 Node -->
+            <div class="stage-node" id="stage-node-5" onclick="jumpToStage(5)">
+              <div class="stage-number">05</div>
+              <div class="stage-icon-circle bg-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">EXECUTION</span>
+                <strong class="stage-name">Direct Banking API</strong>
+                <span class="stage-detail">ACH & Wire Batch Payout</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-5">Queued</div>
+            </div>
+
+            <!-- Stage 6 Node -->
+            <div class="stage-node" id="stage-node-6" onclick="jumpToStage(6)">
+              <div class="stage-number">06</div>
+              <div class="stage-icon-circle bg-emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="stage-info">
+                <span class="stage-tag">REPORTING</span>
+                <strong class="stage-name">WhatsApp Payslip & ERP</strong>
+                <span class="stage-detail">Encrypted PDF + QuickBooks</span>
+              </div>
+              <div class="stage-status-indicator" id="stage-ind-6">Queued</div>
+            </div>
+          </div>
+
+          <!-- Dual Execution Dashboard: Interactive Salary Ledger Table (Left) + Terminal & WhatsApp Output (Right) -->
+          <div class="demo-dual-dashboard">
+            <!-- Left: Interactive Employee Salary Ledger Table -->
+            <div class="dashboard-panel ledger-panel">
+              <div class="panel-header-row">
+                <div class="panel-title-group">
+                  <h4 class="panel-title">📊 Live Employee Salary Ledger</h4>
+                  <span class="panel-subtitle">Calculated in real-time by FlowCraft Business Rules</span>
+                </div>
+                <div class="batch-pill">Batch #OCT-2026-PAYROLL</div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="salary-table" id="salary-demo-table">
+                  <thead>
+                    <tr>
+                      <th>Employee & Role</th>
+                      <th>Base ($)</th>
+                      <th>OT / Bonus</th>
+                      <th>Tax & Deduct</th>
+                      <th>Net Payout</th>
+                      <th>Bank Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Row 1 -->
+                    <tr id="emp-row-1" class="emp-row">
+                      <td>
+                        <div class="emp-cell">
+                          <div class="emp-avatar bg-cyan">SA</div>
+                          <div>
+                            <strong class="emp-name">Sara Al-Ahmad</strong>
+                            <span class="emp-role">Lead AI Architect</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>$6,500.00</td>
+                      <td class="text-emerald">+ $750.00 (10h OT)</td>
+                      <td class="text-red">- $1,320.00</td>
+                      <td><strong class="text-cyan emp-net" id="net-1">$5,930.00</strong></td>
+                      <td><span class="status-chip queued" id="status-1">Standby</span></td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr id="emp-row-2" class="emp-row">
+                      <td>
+                        <div class="emp-cell">
+                          <div class="emp-avatar bg-indigo">TM</div>
+                          <div>
+                            <strong class="emp-name">Tariq Mansoor</strong>
+                            <span class="emp-role">Senior DevOps Lead</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>$5,800.00</td>
+                      <td class="text-emerald">+ $420.00 (6h OT)</td>
+                      <td class="text-red">- $1,140.00</td>
+                      <td><strong class="text-cyan emp-net" id="net-2">$5,080.00</strong></td>
+                      <td><span class="status-chip queued" id="status-2">Standby</span></td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr id="emp-row-3" class="emp-row">
+                      <td>
+                        <div class="emp-cell">
+                          <div class="emp-avatar bg-purple">ER</div>
+                          <div>
+                            <strong class="emp-name">Elena Rostova</strong>
+                            <span class="emp-role">Enterprise Account Exec</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>$4,900.00</td>
+                      <td class="text-emerald">+ $1,200.00 (Commission)</td>
+                      <td class="text-red">- $1,050.00</td>
+                      <td><strong class="text-cyan emp-net" id="net-3">$5,050.00</strong></td>
+                      <td><span class="status-chip queued" id="status-3">Standby</span></td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr id="emp-row-4" class="emp-row">
+                      <td>
+                        <div class="emp-cell">
+                          <div class="emp-avatar bg-blue">OK</div>
+                          <div>
+                            <strong class="emp-name">Omar Khateeb</strong>
+                            <span class="emp-role">Data Pipeline Engineer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>$5,200.00</td>
+                      <td class="text-muted">+ $0.00 (Standard)</td>
+                      <td class="text-red">- $980.00</td>
+                      <td><strong class="text-cyan emp-net" id="net-4">$4,220.00</strong></td>
+                      <td><span class="status-chip queued" id="status-4">Standby</span></td>
+                    </tr>
+
+                    <!-- Row 5 -->
+                    <tr id="emp-row-5" class="emp-row">
+                      <td>
+                        <div class="emp-cell">
+                          <div class="emp-avatar bg-gold">MC</div>
+                          <div>
+                            <strong class="emp-name">Maya Chen</strong>
+                            <span class="emp-role">Financial Operations Analyst</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>$4,600.00</td>
+                      <td class="text-emerald">+ $310.00 (4h OT)</td>
+                      <td class="text-red">- $890.00</td>
+                      <td><strong class="text-cyan emp-net" id="net-5">$4,020.00</strong></td>
+                      <td><span class="status-chip queued" id="status-5">Standby</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Live Ledger Footer Summary -->
+              <div class="ledger-footer-summary">
+                <div class="summary-stat">
+                  <span class="lbl">Total Gross Payroll:</span>
+                  <strong class="val">$27,000.00</strong>
+                </div>
+                <div class="summary-stat">
+                  <span class="lbl">Total Tax & Withholdings:</span>
+                  <strong class="val text-red">-$5,380.00</strong>
+                </div>
+                <div class="summary-stat highlight">
+                  <span class="lbl">Total Net Disbursal:</span>
+                  <strong class="val text-emerald" id="ledger-total-net">$24,300.00</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Real-time Live Terminal Output + WhatsApp Payslip Preview -->
+            <div class="dashboard-panel output-panel">
+              <div class="output-tab-bar">
+                <button class="out-tab active" id="btn-out-tab-terminal" onclick="switchOutputTab('terminal')">
+                  <span>💻 Live Execution Terminal</span>
+                </button>
+                <button class="out-tab" id="btn-out-tab-whatsapp" onclick="switchOutputTab('whatsapp')">
+                  <span>📱 Generated WhatsApp Payslip</span>
+                </button>
+                <button class="out-tab" id="btn-out-tab-cfo" onclick="switchOutputTab('cfo')">
+                  <span>📈 CFO Financial Report</span>
+                </button>
+              </div>
+
+              <!-- Output Pane 1: Live Terminal Log Console -->
+              <div class="output-pane active" id="pane-terminal">
+                <div class="terminal-body" id="demo-terminal-body">
+                  <div class="term-line info"><span class="term-time">[10:06:01]</span> FlowCraft Automation Engine v5.4 ready.</div>
+                  <div class="term-line success"><span class="term-time">[10:06:02]</span> Connected to BambooHR API & Bank Gateway.</div>
+                  <div class="term-line"><span class="term-time">[10:06:03]</span> Click "▶ Run Live Simulation" above to execute salary calculations...</div>
+                </div>
+              </div>
+
+              <!-- Output Pane 2: Smartphone WhatsApp Message Simulation -->
+              <div class="output-pane" id="pane-whatsapp">
+                <div class="phone-mockup">
+                  <div class="phone-header">
+                    <div class="phone-avatar">FC</div>
+                    <div class="phone-contact-info">
+                      <strong>FlowCraft Payroll Bot</strong>
+                      <span>Verified Business • Automated</span>
+                    </div>
+                  </div>
+                  <div class="phone-chat-area">
+                    <div class="chat-bubble received">
+                      <div class="chat-sender">FlowCraft Payroll System</div>
+                      <p>Hello <strong>Sara Al-Ahmad</strong>! 👋</p>
+                      <p>Your October 2026 salary has been calculated and deposited directly to your registered bank account.</p>
+                      <div class="payslip-attachment-box">
+                        <div class="pdf-icon">📄</div>
+                        <div class="pdf-details">
+                          <strong>Payslip_Sara_Al-Ahmad_Oct2026.pdf</strong>
+                          <span>Encrypted PDF • Net: $5,930.00</span>
+                        </div>
+                        <span class="pdf-badge">✓ Signed</span>
+                      </div>
+                      <div class="chat-meta-row">
+                        <span>Ref: ACH-WIRE-994821 • 10:06 AM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Output Pane 3: CFO Financial Summary -->
+              <div class="output-pane" id="pane-cfo">
+                <div class="cfo-summary-card">
+                  <h5 class="cfo-card-title">Executive Payroll Reconciliation</h5>
+                  <div class="cfo-metrics-grid">
+                    <div class="cfo-stat-box">
+                      <span class="cfo-stat-label">Total Execution Time</span>
+                      <strong class="cfo-stat-val text-cyan">1.82 seconds</strong>
+                      <span class="cfo-stat-sub">vs 18 hours manual HR work</span>
+                    </div>
+                    <div class="cfo-stat-box">
+                      <span class="cfo-stat-label">Calculation Error Rate</span>
+                      <strong class="cfo-stat-val text-emerald">0.00%</strong>
+                      <span class="cfo-stat-sub">100% Tax Tier Compliance</span>
+                    </div>
+                    <div class="cfo-stat-box">
+                      <span class="cfo-stat-label">ACH Bank Batch Ref</span>
+                      <strong class="cfo-stat-val">#BATCH-883921</strong>
+                      <span class="cfo-stat-sub">Auto-reconciled in QuickBooks</span>
+                    </div>
+                    <div class="cfo-stat-box">
+                      <span class="cfo-stat-label">Monthly Savings</span>
+                      <strong class="cfo-stat-val text-gold">$3,450 / mo</strong>
+                      <span class="cfo-stat-sub">Eliminated manual processing cost</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

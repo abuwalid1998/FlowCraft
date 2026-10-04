@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForms();
   initScrollSpy();
   initGoogleCalendarWidget();
+  initLiveDemoEngine();
 });
 
 /* --------------------------------------------------------------------------
@@ -740,7 +741,315 @@ function showToast(title, message) {
 }
 
 /* --------------------------------------------------------------------------
-   13. ScrollSpy for Navigation
+   14. Panoramic Interactive Live Demo & Payroll Execution Engine
+   -------------------------------------------------------------------------- */
+let liveDemoState = {
+  currentStage: 0,
+  isRunning: false,
+  timer: null,
+  activePreset: 'payroll',
+  stages: [
+    {
+      num: 1,
+      name: '1/6: Attendance Ingestion',
+      status: 'Syncing BambooHR & Clockify...',
+      logType: 'info',
+      log: 'Ingested 42 timesheets via BambooHR & Clockify API webhooks. Logged: 6,720 regular hours + 48 overtime hours.'
+    },
+    {
+      num: 2,
+      name: '2/6: Gross-to-Net Rules Engine',
+      status: 'Computing tax brackets & OT 1.5x...',
+      logType: 'info',
+      log: 'Rules engine executed: Calculated overtime multiplier 1.5x, statutory tax brackets, 401(k), and health deductions.'
+    },
+    {
+      num: 3,
+      name: '3/6: AI Anomaly & Fraud Guard',
+      status: 'Screening IBAN & salary anomalies...',
+      logType: 'warn',
+      log: 'Fraud Guard scan complete: 0 duplicate IBAN accounts detected. 0 unauthorized salary deviations. Hash #SHA256 verified.'
+    },
+    {
+      num: 4,
+      name: '4/6: 1-Click Executive Verification',
+      status: 'Executive authorization granted...',
+      logType: 'info',
+      log: 'CEO & CFO Telegram approval received via interactive bot. Cryptographic token #AUTH-CFO-8842 validated.'
+    },
+    {
+      num: 5,
+      name: '5/6: Direct Banking API Execution',
+      status: 'Executing Bank Wire & ACH batch payout...',
+      logType: 'success',
+      log: 'Banking API: Batch ACH #BATCH-883921 executed successfully. Transferred $24,300.00 to 5 employee bank accounts.'
+    },
+    {
+      num: 6,
+      name: '6/6: WhatsApp Payslip & ERP Sync',
+      status: 'Completed: Dispatched PDF payslips & QuickBooks sync.',
+      logType: 'success',
+      log: 'Dispatched encrypted PDF payslips to 5 employees via WhatsApp Bot. Synced journal entry #JE-2026-10 into QuickBooks & NetSuite.'
+    }
+  ]
+};
+
+function initLiveDemoEngine() {
+  // Initial setup for the demo engine
+}
+
+function runLivePayrollDemo() {
+  if (liveDemoState.isRunning) {
+    // Pause
+    clearTimeout(liveDemoState.timer);
+    liveDemoState.isRunning = false;
+    const btn = document.getElementById('btn-run-full-sim');
+    if (btn) btn.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M4 3v10l8-5-8-5z"/></svg><span>Resume Simulation</span>';
+    return;
+  }
+
+  liveDemoState.isRunning = true;
+  const btn = document.getElementById('btn-run-full-sim');
+  if (btn) btn.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg><span>Pause Engine</span>';
+
+  if (liveDemoState.currentStage >= 6) {
+    resetLivePayrollDemo();
+  }
+
+  executeNextStageAuto();
+}
+
+function executeNextStageAuto() {
+  if (!liveDemoState.isRunning) return;
+
+  if (liveDemoState.currentStage < 6) {
+    stepLivePayrollDemo();
+    liveDemoState.timer = setTimeout(() => {
+      executeNextStageAuto();
+    }, 1800);
+  } else {
+    liveDemoState.isRunning = false;
+    const btn = document.getElementById('btn-run-full-sim');
+    if (btn) btn.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M4 3v10l8-5-8-5z"/></svg><span>Re-Run Simulation</span>';
+    showToast('Payroll Pipeline Complete! ⚡', 'All 5 employee payroll transfers executed and encrypted PDF payslips dispatched via WhatsApp.');
+  }
+}
+
+function stepLivePayrollDemo() {
+  if (liveDemoState.currentStage >= 6) {
+    liveDemoState.currentStage = 0;
+  }
+
+  liveDemoState.currentStage++;
+  applyStageState(liveDemoState.currentStage);
+}
+
+function jumpToStage(stageNum) {
+  clearTimeout(liveDemoState.timer);
+  liveDemoState.isRunning = false;
+  const btn = document.getElementById('btn-run-full-sim');
+  if (btn) btn.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M4 3v10l8-5-8-5z"/></svg><span>Run Live Simulation</span>';
+  liveDemoState.currentStage = stageNum;
+  applyStageState(stageNum);
+}
+
+function applyStageState(stageNum) {
+  const stageData = liveDemoState.stages[stageNum - 1];
+  if (!stageData) return;
+
+  // 1. Update Metrics Ribbon
+  const metricStageName = document.getElementById('metric-stage-name');
+  const metricStatusBadge = document.getElementById('metric-status-badge');
+  const metricNetTotal = document.getElementById('metric-net-total');
+  const metricLatency = document.getElementById('metric-latency');
+
+  if (metricStageName) metricStageName.textContent = stageData.name;
+  if (metricStatusBadge) metricStatusBadge.textContent = stageData.status;
+  if (metricLatency) metricLatency.textContent = `${Math.floor(250 + Math.random() * 80)}ms`;
+
+  // 2. Update Stage Nodes on the Panoramic Canvas
+  for (let i = 1; i <= 6; i++) {
+    const node = document.getElementById(`stage-node-${i}`);
+    const indicator = document.getElementById(`stage-ind-${i}`);
+    const wire = document.getElementById(`pano-wire-${i - 1}`);
+
+    if (node) {
+      node.classList.remove('active-stage', 'completed-stage');
+      if (i === stageNum) {
+        node.classList.add('active-stage');
+        if (indicator) indicator.textContent = 'Processing...';
+      } else if (i < stageNum) {
+        node.classList.add('completed-stage');
+        if (indicator) indicator.textContent = '✓ Done';
+      } else {
+        if (indicator) indicator.textContent = 'Queued';
+      }
+    }
+
+    if (wire) {
+      if (i <= stageNum) {
+        wire.classList.add('active-wire');
+      } else {
+        wire.classList.remove('active-wire');
+      }
+    }
+  }
+
+  // 3. Update Employee Ledger Table Statuses
+  for (let e = 1; e <= 5; e++) {
+    const row = document.getElementById(`emp-row-${e}`);
+    const statusChip = document.getElementById(`status-${e}`);
+
+    if (row && statusChip) {
+      row.classList.remove('active-calculating', 'completed-dispatched');
+      statusChip.className = 'status-chip';
+
+      if (stageNum === 1) {
+        statusChip.classList.add('queued');
+        statusChip.textContent = 'Hours Synced';
+      } else if (stageNum === 2) {
+        row.classList.add('active-calculating');
+        statusChip.classList.add('calculating');
+        statusChip.textContent = 'Calculating Math';
+      } else if (stageNum === 3) {
+        row.classList.add('active-calculating');
+        statusChip.classList.add('calculating');
+        statusChip.textContent = 'Fraud Checked';
+      } else if (stageNum === 4) {
+        statusChip.classList.add('verified');
+        statusChip.textContent = 'CEO Approved';
+      } else if (stageNum >= 5) {
+        row.classList.add('completed-dispatched');
+        statusChip.classList.add('dispatched');
+        statusChip.textContent = 'Dispatched ($)';
+      }
+    }
+  }
+
+  // 4. Update Net Disbursed Metric
+  if (stageNum >= 5) {
+    if (metricNetTotal) metricNetTotal.textContent = '$24,300.00';
+  } else if (stageNum >= 2) {
+    if (metricNetTotal) metricNetTotal.textContent = '$24,300.00 (Ready)';
+  } else {
+    if (metricNetTotal) metricNetTotal.textContent = '$0.00';
+  }
+
+  // 5. Append Terminal Log
+  appendTerminalLog(stageData.logType, stageData.log);
+
+  // 6. If Stage 6, switch tab preview to WhatsApp automatically for high-impact visual demonstration
+  if (stageNum === 6) {
+    setTimeout(() => {
+      switchOutputTab('whatsapp');
+    }, 600);
+  }
+}
+
+function resetLivePayrollDemo() {
+  clearTimeout(liveDemoState.timer);
+  liveDemoState.isRunning = false;
+  liveDemoState.currentStage = 0;
+
+  const btn = document.getElementById('btn-run-full-sim');
+  if (btn) btn.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M4 3v10l8-5-8-5z"/></svg><span>▶ Run Live Simulation</span>';
+
+  const metricStageName = document.getElementById('metric-stage-name');
+  const metricStatusBadge = document.getElementById('metric-status-badge');
+  const metricNetTotal = document.getElementById('metric-net-total');
+
+  if (metricStageName) metricStageName.textContent = '1/6: Attendance Ingestion';
+  if (metricStatusBadge) metricStatusBadge.textContent = '⚡ Engine Standby';
+  if (metricNetTotal) metricNetTotal.textContent = '$0.00';
+
+  for (let i = 1; i <= 6; i++) {
+    const node = document.getElementById(`stage-node-${i}`);
+    const indicator = document.getElementById(`stage-ind-${i}`);
+    const wire = document.getElementById(`pano-wire-${i - 1}`);
+
+    if (node) {
+      node.classList.remove('active-stage', 'completed-stage');
+      if (i === 1) node.classList.add('active-stage');
+      if (indicator) indicator.textContent = i === 1 ? 'Ready' : 'Queued';
+    }
+    if (wire) wire.classList.remove('active-wire');
+  }
+
+  for (let e = 1; e <= 5; e++) {
+    const row = document.getElementById(`emp-row-${e}`);
+    const statusChip = document.getElementById(`status-${e}`);
+    if (row) row.classList.remove('active-calculating', 'completed-dispatched');
+    if (statusChip) {
+      statusChip.className = 'status-chip queued';
+      statusChip.textContent = 'Standby';
+    }
+  }
+
+  const termBody = document.getElementById('demo-terminal-body');
+  if (termBody) {
+    termBody.innerHTML = `
+      <div class="term-line info"><span class="term-time">[${getCurrentTimeStr()}]</span> FlowCraft Automation Engine v5.4 reset.</div>
+      <div class="term-line success"><span class="term-time">[${getCurrentTimeStr()}]</span> Connected to BambooHR API & Bank Gateway.</div>
+      <div class="term-line"><span class="term-time">[${getCurrentTimeStr()}]</span> Click "▶ Run Live Simulation" above to execute salary calculations...</div>
+    `;
+  }
+}
+
+function appendTerminalLog(type, text) {
+  const termBody = document.getElementById('demo-terminal-body');
+  if (!termBody) return;
+
+  const line = document.createElement('div');
+  line.className = `term-line ${type || ''}`;
+  line.innerHTML = `<span class="term-time">[${getCurrentTimeStr()}]</span> ${text}`;
+  termBody.appendChild(line);
+  termBody.scrollTop = termBody.scrollHeight;
+}
+
+function getCurrentTimeStr() {
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+}
+
+function switchOutputTab(tabKey) {
+  const tabs = ['terminal', 'whatsapp', 'cfo'];
+  tabs.forEach(t => {
+    const btn = document.getElementById(`btn-out-tab-${t}`);
+    const pane = document.getElementById(`pane-${t}`);
+    if (btn) btn.classList.toggle('active', t === tabKey);
+    if (pane) pane.classList.toggle('active', t === tabKey);
+  });
+}
+
+function switchDemoPreset(presetKey) {
+  liveDemoState.activePreset = presetKey;
+  const presets = ['payroll', 'invoice', 'crm'];
+  presets.forEach(p => {
+    const tab = document.getElementById(`tab-preset-${p}`);
+    if (tab) tab.classList.toggle('active', p === presetKey);
+  });
+
+  const engineName = document.getElementById('demo-engine-name');
+
+  if (presetKey === 'payroll') {
+    if (engineName) engineName.textContent = 'FLOWCRAFT_PAYROLL_CORE_v5.4.0 (ACTIVE)';
+    resetLivePayrollDemo();
+  } else if (presetKey === 'invoice') {
+    if (engineName) engineName.textContent = 'FLOWCRAFT_DOC_AI_OCR_v3.2.0 (ACTIVE)';
+    resetLivePayrollDemo();
+    appendTerminalLog('info', 'Loaded Preset: Intelligent Invoice & Document OCR Pipeline.');
+    appendTerminalLog('success', 'Connected to AWS Textract & QuickBooks Online API.');
+  } else if (presetKey === 'crm') {
+    if (engineName) engineName.textContent = 'FLOWCRAFT_SPEED_TO_LEAD_v4.1.0 (ACTIVE)';
+    resetLivePayrollDemo();
+    appendTerminalLog('info', 'Loaded Preset: Omnichannel Speed-to-Lead Routing Engine.');
+    appendTerminalLog('success', 'Connected to Meta Ads Webhook & HubSpot CRM API.');
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. ScrollSpy for Navigation Active Tracking
    -------------------------------------------------------------------------- */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
